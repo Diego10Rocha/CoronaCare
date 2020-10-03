@@ -18,12 +18,12 @@ public class FamiliarDAO {
 		try {
 			rs.next();
 			f = new Familiar();
-			f.setIdFamiliar(rs.getInt("id_Familiar"));
-			f.setNomeFamiliar(rs.getString("nomeFamiliar"));
+			f.setIdUsuario(rs.getInt("id_Familiar"));
+			f.setNomeUsuario(rs.getString("nomeFamiliar"));
 			f.setData_Nascimento(rs.getString("dataNascFamiliar"));
-			f.setTelefoneFamiliar(rs.getString("telefoneFamiliar"));
-			f.setTelefoneFamiliar(rs.getString("senhaFamiliar"));
-			f.setTelefoneFamiliar(rs.getString("emailFamiliar"));
+			f.setTelefoneUsuario(rs.getString("telefoneFamiliar"));
+			f.setTelefoneUsuario(rs.getString("senhaFamiliar"));
+			f.setTelefoneUsuario(rs.getString("emailFamiliar"));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -41,16 +41,16 @@ public class FamiliarDAO {
 		
 		Conexao.conectar();
 		
-		rs = Conexao.receberDados("select * from vPacientesFamiliar");
+		rs = Conexao.receberDados("select * from vPacientesFamiliar where id_Familiar = " + id);
 		try {
 			while(rs.next()) {
 				p = new Paciente();
-				p.setIdPaciente(rs.getInt("id_Paciente"));
-				p.setNomePaciente(rs.getString("nomePaciente"));
+				p.setIdUsuario(rs.getInt("id_Paciente"));
+				p.setNomeUsuario(rs.getString("nomePaciente"));
 				p.setData_Nascimento(rs.getString("dataNascPaciente"));
-				p.setTelefonePaciente(rs.getString("telefonePaciente"));
-				p.setTelefonePaciente(rs.getString("senhaPaciente"));
-				p.setTelefonePaciente(rs.getString("emailPaciente"));
+				p.setTelefoneUsuario(rs.getString("telefonePaciente"));
+				p.setTelefoneUsuario(rs.getString("senhaPaciente"));
+				p.setTelefoneUsuario(rs.getString("emailPaciente"));
 				p.setNickname(rs.getString("nickname"));
 			}
 		} catch (SQLException e) {
@@ -73,12 +73,12 @@ public class FamiliarDAO {
 		try {
 			rs.next();
 			f = new Familiar();
-			f.setIdFamiliar(rs.getInt("id_Familiar"));
-			f.setNomeFamiliar(rs.getString("nomeFamiliar"));
+			f.setIdUsuario(rs.getInt("id_Familiar"));
+			f.setNomeUsuario(rs.getString("nomeFamiliar"));
 			f.setData_Nascimento(rs.getString("dataNascFamiliar"));
-			f.setTelefoneFamiliar(rs.getString("telefoneFamiliar"));
-			f.setTelefoneFamiliar(rs.getString("senhaFamiliar"));
-			f.setTelefoneFamiliar(rs.getString("emailFamiliar"));
+			f.setTelefoneUsuario(rs.getString("telefoneFamiliar"));
+			f.setTelefoneUsuario(rs.getString("senhaFamiliar"));
+			f.setTelefoneUsuario(rs.getString("emailFamiliar"));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -99,16 +99,16 @@ public class FamiliarDAO {
 	public static void insertFamiliar(Familiar f) {
 		Conexao.conectar();
 		Conexao.enviarDados("insert into Paciente(nomeFamiliar, emailFamiliar, senhaFamiliar, dataNascFamiliar, telefoneFamiliar)"
-				+ "values ('" + f.getNomeFamiliar() + "','" + f.getEmailFamiliar()+ "', '" + f.getSenhaFamiliar() 
-				+"', '" + f.getData_Nascimento() +"', '" + f.getTelefoneFamiliar()+"')");
+				+ "values ('" + f.getNomeUsuario() + "','" + f.getEmailUsuario()+ "', '" + f.getSenhaUsuario() 
+				+"', '" + f.getData_Nascimento() +"', '" + f.getTelefoneUsuario()+"')");
 		Conexao.fechar();
 	}
 	
 	public static void updateFamiliar(Familiar f) {
 		Conexao.conectar();
-		Conexao.enviarDados("update Familiar set nomeFamiliar = '" + f.getNomeFamiliar() + "', emailFamiliar ='" + f.getEmailFamiliar() 
-		+ "', dataNascPaciente ='" + f.getData_Nascimento() + "', telefoneFamiliar ='" + f.getTelefoneFamiliar() + "', senhaFamiliar ='" 
-				+ f.getSenhaFamiliar() + "' where id_Familiar = " + f.getIdFamiliar());
+		Conexao.enviarDados("update Familiar set nomeFamiliar = '" + f.getNomeUsuario() + "', emailFamiliar ='" + f.getEmailUsuario() 
+		+ "', dataNascPaciente ='" + f.getData_Nascimento() + "', telefoneFamiliar ='" + f.getTelefoneUsuario() + "', senhaFamiliar ='" 
+				+ f.getSenhaUsuario() + "' where id_Familiar = " + f.getIdUsuario());
 		Conexao.fechar();
 	}
 

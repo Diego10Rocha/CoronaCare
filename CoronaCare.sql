@@ -35,17 +35,23 @@ describe familiar;
 insert into Familiar(nomeFamiliar, emailFamiliar, senhaFamiliar, dataNascFamiliar, telefoneFamiliar)
 	values("diego", "email", "123", "2001/03/20", "40028922");
     
+insert into Familiar(nomeFamiliar, emailFamiliar, senhaFamiliar, dataNascFamiliar, telefoneFamiliar)
+	values("torcedor", "email@bahea", "123423", "2001/03/20", "40028922");
+    
 select * from Familiar;
 select * from Paciente;
 select * from Paciente_Has_Familiar;
 
-select * from vPacientesFamiliar;
+select * from vPacientesFamiliar where id_Familiar = 1;
 
 insert into Paciente(nomePaciente, nickname, emailPaciente, senhaPaciente, dataNascPaciente, telefonePaciente)
 	values("la ele", "aaaa", "email", "123", "2001/03/20", "40028922");
     
 insert into Paciente(nomePaciente, nickname, emailPaciente, senhaPaciente, dataNascPaciente, telefonePaciente)
 	values("BBMP", "Bahea", "bahia@bahia", "123", "1931/01/01", "40028922");
+
+insert into Paciente(nomePaciente, nickname, emailPaciente, senhaPaciente, dataNascPaciente, telefonePaciente)
+	values("BBMP", "milgrau", "bahia@bahia1931", "12243", "1931/01/01", "40028922");
     
 insert into Paciente_Has_Familiar(id_Paciente, id_Familiar)
 	values (1 ,1);
@@ -53,8 +59,13 @@ insert into Paciente_Has_Familiar(id_Paciente, id_Familiar)
 insert into Paciente_Has_Familiar(id_Paciente, id_Familiar)
 	values (2 ,1);
     
+insert into Paciente_Has_Familiar(id_Paciente, id_Familiar)
+	values (4 ,2);
+    
+drop view if exists vPacientesFamiliar;
+    
 create view vPacientesFamiliar as 
-select Paciente.id_Paciente, Paciente.nomePaciente, Paciente.nickname, Paciente.emailPaciente, 
+select Familiar.id_Familiar, Paciente.id_Paciente, Paciente.nomePaciente, Paciente.nickname, Paciente.emailPaciente, 
 Paciente.senhaPaciente, Paciente.dataNascPaciente, Paciente.telefonePaciente
 from Familiar inner join Paciente_has_Familiar on Familiar.id_Familiar = Paciente_Has_Familiar.id_Familiar
 inner join Paciente on Paciente_Has_Familiar.id_Paciente = Paciente.id_Paciente;
