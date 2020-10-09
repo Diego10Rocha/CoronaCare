@@ -2,6 +2,7 @@ package Conexao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -50,12 +51,13 @@ public class Conexao {
 	
 	public static void enviarDados(String SQL) {
 		try {
-			Statement st = con.createStatement();
-			st.execute(SQL);
+			PreparedStatement stmt = con.prepareStatement(SQL);
+			stmt.setInt(1,  1);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 
 }

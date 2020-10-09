@@ -1,5 +1,7 @@
 package Persistencia;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -8,13 +10,17 @@ import Dados.Familiar;
 import Dados.Paciente;
 
 public class FamiliarDAO {
-	public static Familiar getFamiliar(int Id) {
+	public static Familiar getFamiliar(int Id) throws SQLException {
 		Familiar f = null;
 		ResultSet rs;
+		PreparedStatement stmt;
 		
-		Conexao.conectar();
+		String sql = "select * from Paciente where id_Familiar = ?";
+		Connection con = Conexao.getConnection();
+		stmt = con.prepareStatement(sql);
+		stmt.setInt(1, Id);
 		
-		rs = Conexao.receberDados("select * from Familiar where id_Familiar = " + Id);
+		rs = stmt.executeQuery();
 		try {
 			rs.next();
 			f = new Familiar();
@@ -29,19 +35,25 @@ public class FamiliarDAO {
 			e.printStackTrace();
 		}
 		
-		Conexao.fechar();
+		con.close();
+		stmt.close();
+		rs.close();
 		
 		return f;
 	}
 	
-	public static ArrayList <Paciente> getPacientes(int id){
+	public static ArrayList <Paciente> getPacientes(int Id) throws SQLException{
 		ArrayList <Paciente> pacientes = new ArrayList<Paciente> ();
 		Paciente p = null;
 		ResultSet rs;
+		PreparedStatement stmt;
 		
-		Conexao.conectar();
+		String sql = "select * from vPacientesFamiliar where id_Familiar = ?";
+		Connection con = Conexao.getConnection();
+		stmt = con.prepareStatement(sql);
+		stmt.setInt(1, Id);
 		
-		rs = Conexao.receberDados("select * from vPacientesFamiliar where id_Familiar = " + id);
+		rs = stmt.executeQuery();
 		try {
 			while(rs.next()) {
 				p = new Paciente();
@@ -58,18 +70,25 @@ public class FamiliarDAO {
 			e.printStackTrace();
 		}
 		
-		Conexao.fechar();
+		rs.close();
+		con.close();
+		stmt.close();
 		
 		return pacientes;
 	}
 	
-	public static Familiar loginFamiliar(String email, String password) {
+	public static Familiar loginFamiliar(String email, String password) throws SQLException {
 		Familiar f = null;
 		ResultSet rs;
+		PreparedStatement stmt;
 		
-		Conexao.conectar();
+		String sql = "select * from Familiar where emailFamiliar = ? and senhaFamiliar = ?";
+		Connection con = Conexao.getConnection();
+		stmt = con.prepareStatement(sql);
+		stmt.setString(1, email);
+		stmt.setString(2, password);
 		
-		rs = Conexao.receberDados("select * from Familiar where emailFamiliar = " + email + " and senhaFamiliar = "+password);
+		rs = stmt.executeQuery();
 		try {
 			rs.next();
 			f = new Familiar();
@@ -85,31 +104,78 @@ public class FamiliarDAO {
 			f = null;
 		}
 		
-		Conexao.fechar();
+		con.close();
+		stmt.close();
+		rs.close();
 		
 		return f != null ? f : null;
 	}
 	
-	public static void deleteFamiliar(int Id) {
-		Conexao.conectar();
-		Conexao.enviarDados("delete from Familiar where id_Familiar = " + Id);
-		Conexao.fechar();
+	public static boolean deleteFamiliar(int Id) {
+		PreparedStatement stmt;
+		Connection con;
+		String sql = "delete from Paciente where id_Familiar = ?";
+		try {
+			con = Conexao.getConnection();
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1,  Id);
+			stmt.executeUpdate();
+			con.close();
+			stmt.close();
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
 	}
 	
-	public static void insertFamiliar(Familiar f) {
-		Conexao.conectar();
-		Conexao.enviarDados("insert into Paciente(nomeFamiliar, emailFamiliar, senhaFamiliar, dataNascFamiliar, telefoneFamiliar)"
-				+ "values ('" + f.getNomeUsuario() + "','" + f.getEmailUsuario()+ "', '" + f.getSenhaUsuario() 
-				+"', '" + f.getData_Nascimento() +"', '" + f.getTelefoneUsuario()+"')");
-		Conexao.fechar();
+	public static boolean insertFamiliar(Familiar f) {
+		PreparedStatement stmt;
+		Connection con;
+		String sql = "insert into Paciente(nomeFamiliar, emailFamiliar, senhaFamiliar, dataNascFamiliar, telefoneFamiliar)"
+				+ "values (?,?,?,?,?)";
+		try {
+			con = Conexao.getConnection();
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1,  f.getNomeUsuario());
+			stmt.setString(2, f.getEmailUsuario());
+			stmt.setString(3, f.getSenhaUsuario());
+			stmt.setString(4, f.getData_Nascimento());
+			stmt.setString(5, f.getTelefoneUsuario());
+			stmt.executeUpdate();
+			con.close();
+			stmt.close();
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
 	}
 	
-	public static void updateFamiliar(Familiar f) {
-		Conexao.conectar();
-		Conexao.enviarDados("update Familiar set nomeFamiliar = '" + f.getNomeUsuario() + "', emailFamiliar ='" + f.getEmailUsuario() 
-		+ "', dataNascPaciente ='" + f.getData_Nascimento() + "', telefoneFamiliar ='" + f.getTelefoneUsuario() + "', senhaFamiliar ='" 
-				+ f.getSenhaUsuario() + "' where id_Familiar = " + f.getIdUsuario());
-		Conexao.fechar();
+	public static boolean updateFamiliar(Familiar f) {
+		PreparedStatement stmt;
+		Connection con;
+		String sql = "update Familiar set nomeFamiliar = ?, emailFamiliar = ?, dataNascPaciente = ?, telefoneFamiliar = ?, "
+				+ "senhaFamiliar = ? where id_Familiar = ?";
+		try {
+			con = Conexao.getConnection();
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1,  f.getNomeUsuario());
+			stmt.setString(2, f.getEmailUsuario());
+			stmt.setString(3, f.getSenhaUsuario());
+			stmt.setString(4, f.getData_Nascimento());
+			stmt.setString(5, f.getTelefoneUsuario());
+			stmt.executeUpdate();
+			con.close();
+			stmt.close();
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 }

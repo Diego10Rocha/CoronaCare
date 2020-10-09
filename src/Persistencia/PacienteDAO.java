@@ -9,6 +9,7 @@ import Conexao.Conexao;
 import Dados.Paciente;
 
 public class PacienteDAO {
+	
 	public static Paciente getPaciente(int Id) throws SQLException {
 		Paciente p = null;
 		ResultSet rs;
@@ -18,6 +19,7 @@ public class PacienteDAO {
 		Connection con = Conexao.getConnection();
 		stmt = con.prepareStatement(sql);
 		stmt.setInt(1, Id);
+		
 		
 		rs = stmt.executeQuery();
 		try {
@@ -35,7 +37,9 @@ public class PacienteDAO {
 			e.printStackTrace();
 		}
 		
-		Conexao.fechar();
+		rs.close();
+		stmt.close();
+		con.close();
 		
 		return p;
 	}
@@ -43,10 +47,15 @@ public class PacienteDAO {
 	public static Paciente loginPaciente(String email, String password) throws SQLException {
 		Paciente p = null;
 		ResultSet rs;
-		
+		PreparedStatement stmt;
 		Connection con = Conexao.getConnection();
 		
-		rs = Conexao.receberDados("select * from Paciente where emailPaciente = " + email + " and senhaPaciente = "+password);
+		String sql = "select * from Paciente where emailPaciente = ? and senhaPaciente = ?";
+		stmt = con.prepareStatement(sql);
+		stmt.setString(1, email);
+		stmt.setString(2, password);
+		rs = stmt.executeQuery();
+		
 		try {
 			rs.next();
 			p = new Paciente();
@@ -63,30 +72,80 @@ public class PacienteDAO {
 			p = null;
 		}
 		
-		Conexao.fechar();
+		con.close();
+		rs.close();
+		stmt.close();
 		
 		return p != null ? p : null;
 	}
 	
-	public static void deletePaciente(int Id) throws SQLException {
-		Connection con = Conexao.getConnection();
-		Conexao.enviarDados("delete from Paciente where id_Paciente = " + Id);
-		Conexao.fechar();
+	public static boolean deletePaciente(int Id){
+		PreparedStatement stmt;
+		Connection con;
+		String sql = "delete from Paciente where id_Paciente = ?";
+		try {
+			con = Conexao.getConnection();
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1,  Id);
+			stmt.executeUpdate();
+			con.close();
+			stmt.close();
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		
 	}
 	
-	public static void insertPaciente(Paciente p) throws SQLException {
-		Connection con = Conexao.getConnection();
-		Conexao.enviarDados("insert into Paciente(nomePaciente, nickname, emailPaciente, senhaPaciente, dataNascPaciente, telefonePaciente)"
-				+ "values ('" + p.getNomeUsuario() + "','" + p.getNickname() + "', '" + p.getEmailUsuario()+ "', '" 
-				+ p.getSenhaUsuario() +"', '" + p.getData_Nascimento() +"', '" + p.getTelefoneUsuario()+"')");
-		Conexao.fechar();
+	public static boolean insertPaciente(Paciente p){
+		PreparedStatement stmt;
+		Connection con;
+		String sql = "insert into Paciente(nomePaciente, nickname, emailPaciente, senhaPaciente, dataNascPaciente, telefonePaciente)"
+				+ "values (?,?,?,?,?,?)";
+		try {
+			con = Conexao.getConnection();
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1,  p.getNomeUsuario());
+			stmt.setString(2, p.getNickname());
+			stmt.setString(3, p.getEmailUsuario());
+			stmt.setString(4, p.getSenhaUsuario());
+			stmt.setString(5, p.getData_Nascimento());
+			stmt.setString(6, p.getTelefoneUsuario());
+			stmt.executeUpdate();
+			con.close();
+			stmt.close();
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
 	}
 	
-	public static void updatePaciente(Paciente p) throws SQLException {
-		Connection con = Conexao.getConnection();
-		Conexao.enviarDados("update Paciente set nomePaciente='" + p.getNomeUsuario() + "', emailPaciente ='" + p.getEmailUsuario() 
-		+ "', dataNascPaciente ='" + p.getData_Nascimento() + "', telefonePaciente='" + p.getTelefoneUsuario() + "', senhaPaciente='" 
-				+ p.getSenhaUsuario() +"',nickname='"+p.getNickname()+"' where id_Paciente = " + p.getIdUsuario());
-		Conexao.fechar();
+	public static boolean updatePaciente(Paciente p) throws SQLException {
+		PreparedStatement stmt;
+		Connection con;
+		String sql = "update Paciente set nomePaciente = ?, emailPaciente = ?, dataNascPaciente = ?, telefonePaciente = ?, senhaPaciente = ?" 
+		+ ",nickname = ? where id_Paciente = ?";
+		try {
+			con = Conexao.getConnection();
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1,  p.getNomeUsuario());
+			stmt.setString(2, p.getNickname());
+			stmt.setString(3, p.getEmailUsuario());
+			stmt.setString(4, p.getSenhaUsuario());
+			stmt.setString(5, p.getData_Nascimento());
+			stmt.setString(6, p.getTelefoneUsuario());
+			stmt.executeUpdate();
+			con.close();
+			stmt.close();
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
 	}
 }
