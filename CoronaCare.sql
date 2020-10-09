@@ -1,5 +1,5 @@
 drop database if exists coronacare;
-create database CoronaCare;
+create database CoronaCare default character set utf8 default collate utf8_general_ci;
 use CoronaCare;
 
 create table Paciente(
@@ -42,8 +42,6 @@ select * from Familiar;
 select * from Paciente;
 select * from Paciente_Has_Familiar;
 
-select * from vPacientesFamiliar where id_Familiar = 1;
-
 insert into Paciente(nomePaciente, nickname, emailPaciente, senhaPaciente, dataNascPaciente, telefonePaciente)
 	values("la ele", "aaaa", "email", "123", "2001/03/20", "40028922");
     
@@ -60,7 +58,7 @@ insert into Paciente_Has_Familiar(id_Paciente, id_Familiar)
 	values (2 ,1);
     
 insert into Paciente_Has_Familiar(id_Paciente, id_Familiar)
-	values (4 ,2);
+	values (3 ,2);
     
 drop view if exists vPacientesFamiliar;
     
@@ -70,3 +68,4 @@ Paciente.senhaPaciente, Paciente.dataNascPaciente, Paciente.telefonePaciente
 from Familiar inner join Paciente_has_Familiar on Familiar.id_Familiar = Paciente_Has_Familiar.id_Familiar
 inner join Paciente on Paciente_Has_Familiar.id_Paciente = Paciente.id_Paciente;
 
+select * from vPacientesFamiliar where id_Familiar = 1;

@@ -13,14 +13,16 @@ public class Conexao {
 	private static final String usuario = "root";
 	private static final String senha = "root";
 	
-	public static void conectar(){
-		try {
+	public static Connection getConnection() throws SQLException{
+		try{
 			new com.mysql.jdbc.Driver();
 			con = DriverManager.getConnection("jdbc:mysql://"+ servidor + "/" + basedados, usuario, senha);
+			System.out.println("Conectado com Sucesso ao Banco!");
+			return con;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+			System.out.println("Erro ao Conectar com o Banco");
+			throw new SQLException(e.getMessage());
+		}
 	}
 	
 	public static void fechar() {

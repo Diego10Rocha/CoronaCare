@@ -1,0 +1,37 @@
+@CHARSET "utf-8";
+
+#formLogin{
+	position: absolute;
+	top: 10%;
+	left: 30%;
+	width: 40%;
+	height: 60%;
+	font-size: 15pt;
+	font-family: "arial";
+	margin-right: auto;
+	margin-left: auto;
+	border-width: 2px;
+}
+.form-control{
+	display: block;
+	width: 100%;
+	height: calc(2.25rem + 2px);
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+	
+}
+
+.form-control:hover {
+		transition: none;
+}
+
+p{
+	font-size:20;
+}
