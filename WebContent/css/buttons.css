@@ -4,7 +4,7 @@
 	width: 20%;
 	padding: 10px;
 	border-radius: 10px 10px 10px 10px;
-	background-color: #0080ff;
+	background-color:red;
 	FONT-SIZE: 15pt;
 	font-family: "arial";
 	opacity: 0.85;
@@ -44,3 +44,4 @@ button{
 button:hover{
 	border-color: #999;
 }
+

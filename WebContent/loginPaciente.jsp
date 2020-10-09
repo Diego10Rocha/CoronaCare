@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>CoronaCare: login</title>
-<link rel="stylesheet" type="text/css" href="css/buttons.css" >
+<link rel="stylesheet" type="text/css" href="css/buttons-alter.css" >
 <link rel="stylesheet" type="text/css" href="css/escopo.css" >
 <link rel="shortcut icon" href="images/CoronaCare.png" type="image/x-icon"/>
 </head>
@@ -14,7 +14,7 @@
 	<div id="header">
 		<img class="imagemtop" src="images/CoronaCare.png"  width="100%">
 		<p class="headerText">
-			<a href="index.jsp">CoronaCare</a>
+			<a href="index.jsp" class="title">CoronaCare</a>
 		</p>
 	</div>
 
@@ -23,13 +23,19 @@
 			<br><br>
 			<form action="RealizarCadastro" method="post">
 				<label>Email:</label>
-				<input type= "text" required="required" name="email" placeholder="email"><br><br>
+				<input id="input-email" type= "text" required="required" name="email" placeholder="email"><br><br>
 				<label>Senha:</label>
-				<input type="password" required="required" placeholder="password" name="password"><br><br>
-				<button type="submit">Entrar</button><br><br>
-				
+				<input id="input-senha" type="password" required="required" placeholder="**********" name="password"><br><br>
 			</form>
-			<a href="cadastroFamiliar.jsp"><button>Cadastre-se</button></a>
+			<div class="inputs">
+    			<div>
+        			<button class="bnt-entrar" type="submit">Entrar</button></div>
+    			<div>
+        			<a class="bnt-cadastrar" href="cadastroPaciente.jsp">Cadastrar</a></div>
+			</div>
+			
+			
+			
 		</div>
 		
 	</div>
