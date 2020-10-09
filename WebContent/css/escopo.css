@@ -6,16 +6,16 @@
 	width: 100%;
 	height: 15%;
 	background: #B22222;
-	<!-- background: #139bec; -->
 	font-size: 40;
 }
+
+
 #body{
 	position: absolute;
 	top: 15%;
 	left: 0%;
 	height: 85%;
 	width: 100%;
-	background-color: #ffffff;
 }
 
 #menu{
@@ -32,9 +32,8 @@
 		
 #formcadastro{
 	position:absolute;
-	top:15%;
-	left:35%;
-	background-color:white;
+	margin-top:15px;
+	background-color:red;
 	width:65%;
 	font-size: 25pt;
 }
