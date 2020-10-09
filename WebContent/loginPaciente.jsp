@@ -3,10 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<<<<<<< HEAD
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>CoronaCare</title>
 
 <link rel="stylesheet" type="text/css" href="css/menu.css" >
+=======
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CoronaCare: login</title>
+<link rel="stylesheet" type="text/css" href="css/buttons-alter.css" >
+>>>>>>> af7eb07841ad74259b8414ec871b67abca45a675
 <link rel="stylesheet" type="text/css" href="css/escopo.css" >
 <link rel="shortcut icon" href="images/CoronaCare.png" type="image/x-icon"/>
 <style type="text/css">
@@ -27,6 +33,7 @@
 			<a href="index.jsp" class="title">CoronaCare</a>
 		</p>
 	</div>
+<<<<<<< HEAD
 <div id="body">
 	<div id="menu">
 		<div id="paciente">
@@ -34,6 +41,27 @@
 		</div>
 		<div id="familiar">
 			<p class="menuItem"><a href="loginFamiliar.jsp">Entrar Como Familiar</a></p>
+=======
+
+	<div id="body" class="cor">
+		<div id="formcadastro">
+			<br><br>
+			<form action="RealizarCadastro" method="post">
+				<label>Email:</label>
+				<input id="input-email" type= "text" required="required" name="email" placeholder="email"><br><br>
+				<label>Senha:</label>
+				<input id="input-senha" type="password" required="required" placeholder="**********" name="password"><br><br>
+			</form>
+			<div class="inputs">
+    			<div>
+        			<button class="bnt-entrar" type="submit">Entrar</button></div>
+    			<div>
+        			<a class="bnt-cadastrar" href="cadastroPaciente.jsp">Cadastrar</a></div>
+			</div>
+			
+			
+			
+>>>>>>> af7eb07841ad74259b8414ec871b67abca45a675
 		</div>
 	</div>
 	<!--<iframe width="853" height="480" src="https://www.youtube.com/embed/OpM2T2QYeX4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
