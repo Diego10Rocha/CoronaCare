@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import Conexao.Conexao;
 import Dados.Familiar;
 import Dados.Paciente;
+import Dados.Usuario;
 
 public class FamiliarDAO {
 	public static Familiar getFamiliar(int Id) throws SQLException {
@@ -130,7 +131,7 @@ public class FamiliarDAO {
 		}
 	}
 	
-	public static boolean insertFamiliar(Familiar f) {
+	public static boolean insertFamiliar(Usuario f) {
 		PreparedStatement stmt;
 		Connection con;
 		String sql = "insert into Paciente(nomeFamiliar, emailFamiliar, senhaFamiliar, dataNascFamiliar, telefoneFamiliar)"

@@ -1,7 +1,10 @@
 package Dados;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import Persistencia.FamiliarDAO;
 
 public class Familiar extends Usuario{
 	
@@ -15,14 +18,17 @@ public class Familiar extends Usuario{
 	}
 	
 	@Override
-	public boolean login(String email, String senha) {
-		// TODO Auto-generated method stub
-		return false;
+	public Usuario login(String email, String senha) {
+		try {
+			return FamiliarDAO.loginFamiliar(email, senha);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 	@Override
-	public void cadastrar(Usuario user) {
-		// TODO Auto-generated method stub
-		
+	public boolean cadastrar(Usuario user) {
+		return FamiliarDAO.insertFamiliar(user);
 	}
 	
 }

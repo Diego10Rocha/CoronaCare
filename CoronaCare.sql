@@ -2,6 +2,7 @@ drop database if exists coronacare;
 create database CoronaCare default character set utf8 default collate utf8_general_ci;
 use CoronaCare;
 
+drop table if exists Paciente;
 create table Paciente(
 id_Paciente int unsigned not null unique primary key auto_increment,
 nomePaciente varchar(45) not null,
@@ -12,6 +13,7 @@ dataNascPaciente date not null,
 telefonePaciente varchar(20) not null
 );
 
+drop table if exists Familiar;
 create table Familiar(
 id_Familiar int unsigned not null primary key auto_increment,
 nomeFamiliar varchar(45) not null,
@@ -21,6 +23,7 @@ dataNascFamiliar date not null,
 telefoneFamiliar varchar(20) not null
 );
 
+drop table if exists Paciente_has_Familiar;
 create table Paciente_has_Familiar(
 id_Paciente int unsigned not null,
 id_Familiar int unsigned not null,
@@ -59,9 +62,8 @@ insert into Paciente_Has_Familiar(id_Paciente, id_Familiar)
     
 insert into Paciente_Has_Familiar(id_Paciente, id_Familiar)
 	values (3 ,2);
-    
+
 drop view if exists vPacientesFamiliar;
-    
 create view vPacientesFamiliar as 
 select Familiar.id_Familiar, Paciente.id_Paciente, Paciente.nomePaciente, Paciente.nickname, Paciente.emailPaciente, 
 Paciente.senhaPaciente, Paciente.dataNascPaciente, Paciente.telefonePaciente

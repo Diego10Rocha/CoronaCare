@@ -45,7 +45,7 @@ public abstract class Usuario {
 		SenhaUsuario = senhaUsuario;
 	}
 	
-	public abstract boolean login(String email, String senha);
+	public abstract Usuario login(String email, String senha);
 	
-	public abstract void cadastrar(Usuario user);
+	public abstract boolean cadastrar(Usuario user);
 }
