@@ -6,7 +6,9 @@
 	font-family: "arial";
 }
 
-
+.inputs{
+	margin-left:500px;
+}
 .bnt-entrar{
 	border:1px solid; padding: 11px 21px;
 	vertical-align: middle; 
@@ -22,7 +24,8 @@
 }
 
 .bnt-cadastrar{
-	border:1px solid; padding: 11px 21px;
+	border:1px solid;
+	padding: 11px 21px;
 	vertical-align: middle; 
 	background:#FF6347; 
 	color:white;
@@ -33,6 +36,10 @@
 	text-decoration:none;
 	margin-left:100px;
 	float:left;
+}
+
+.enviar{
+	margin-left:500px;
 }
 
 #input-email{

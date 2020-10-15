@@ -5,16 +5,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>CoronaCare: Cadastro</title>
-<link rel="stylesheet" type="text/css" href="css/buttons.css" >
+<link rel="stylesheet" type="text/css" href="css/buttons-alter.css" >
 <link rel="stylesheet" type="text/css" href="css/escopo.css" >
 <link rel="shortcut icon" href="images/CoronaCare.png" type="image/x-icon"/>
 </head>
 <body>
 
 	<div id="header">
-		<a href="index.jsp"><img class="imagemtop" src="images/CoronaCare.png"  width="100%"></a>
+		<img class="imagemtop" src="images/CoronaCare.png"  width="100%">
 		<p class="headerText">
-			<a href="index.jsp">CoronaCare</a>
+			<a href="index.jsp" class="title">CoronaCare</a>
 		</p>
 	</div>
 	
@@ -29,10 +29,10 @@
 				<label>Telefone:</label>
 				<input type="text" required="required" onblur="javascript: formatarCampo(this);" maxlength="14" name="telefone" placeholder="Telefone"/><br><br>
 				<label>Email:</label>
-				<input type= "text" required="required" name="email" placeholder="email">
+				<input type= "text" required="required" name="email" placeholder="email"><br><br>
 				<label>Senha:</label>
 				<input type="password" required="required" placeholder="password" name="password"><br><br>
-				<input type="submit" value="Cadastrar">
+				<input class="bnt-cadastrar" type="submit" value="Cadastrar">
 				
 			</form>
 		</div>

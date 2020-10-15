@@ -19,7 +19,7 @@
 	</div>
 
 	<div id="body" class="cor">
-		<div id="formcadastro">
+		<div id="formEntrar">
 			<br><br>
 			<form action="RealizarCadastro" method="post">
 				<label>Email:</label>
@@ -27,15 +27,12 @@
 				<label>Senha:</label>
 				<input id="input-senha" type="password" required="required" placeholder="****" name="password"><br><br>
 			</form>
-			<div class="inputs">
+		</div>
+		<div class="inputs">
     			<div>
         			<button class="bnt-entrar" type="submit">Entrar</button></div>
     			<div>
         			<a class="bnt-cadastrar" href="cadastroPaciente.jsp">Cadastrar</a></div>
-			</div>
-			
-			
-			
 		</div>
 		
 	</div>
