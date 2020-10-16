@@ -10,12 +10,7 @@
 <link rel="stylesheet" type="text/css" href="css/buttons.css" >
 <link rel="stylesheet" type="text/css" href="css/escopo.css" >
 <link rel="shortcut icon" href="images/CoronaCare.png" type="image/x-icon"/>
-<script type="text/javascript">
-(function( $ ) {
-	  $(function() {
-		  $("#telefone").mask("(99) 99999-9999");  });
-	})(jQuery);
-</script>
+
 </head>
 <body>
 
@@ -37,7 +32,6 @@
 				<input type="date" required="required" value="" name="datanascimento"><br><br>
 				<label>Telefone:</label>
 				<input type="text" required="required" id="telefone" onblur="javascript: formatarCampo(this);" name="telefone" placeholder="Telefone" maxlength="15" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}"/><br><br>
-				<script>$("#telefone").mask("(00) 0000-00009");</script>
 				<label>Email:</label>
 				<input type="email" required="required" id="emailUsuario" name="emailUsuario" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
 				<label>Confirmar email:</label>
