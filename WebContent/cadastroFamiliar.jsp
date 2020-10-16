@@ -4,6 +4,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>CoronaCare: Cadastro</title>
+<script src="js/FormatCamposJQ.js" type="text/javascript"></script>
+<script src="js/ValidaEmail.js" type="text/javascript"></script>
+<script src="js/ValidaSenha.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="css/buttons-alter.css" >
 <link rel="stylesheet" type="text/css" href="css/buttons.css" >
 <link rel="stylesheet" type="text/css" href="css/escopo.css" >
 <link rel="shortcut icon" href="images/CoronaCare.png" type="image/x-icon"/>

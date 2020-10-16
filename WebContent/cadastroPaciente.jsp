@@ -1,23 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!doctype html>
-<html lang="pt-br">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>CoronaCare: Cadastro</title>
-<script src="js/FormatCamposJQ.js" ></script>
+<script src="js/FormatCamposJQ.js" type="text/javascript"></script>
 <script src="js/ValidaEmail.js" type="text/javascript"></script>
 <script src="js/ValidaSenha.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="css/buttons-alter.css" >
 <link rel="stylesheet" type="text/css" href="css/buttons.css" >
 <link rel="stylesheet" type="text/css" href="css/escopo.css" >
 <link rel="shortcut icon" href="images/CoronaCare.png" type="image/x-icon"/>
-
 </head>
 <body>
 
 	<div id="header">
-		<a href="index.jsp"><img class="imagemtop" src="images/CoronaCare.png"  width="100%"></a>
+		<img class="imagemtop" src="images/CoronaCare.png"  width="100%">
 		<p class="headerText">
-			<a href="index.jsp">CoronaCare</a>
+			<a href="index.jsp" class="title">CoronaCare</a>
 		</p>
 	</div>
 	
@@ -31,18 +31,22 @@
 				<label>Data de Nascimento:</label>
 				<input type="date" required="required" value="" name="datanascimento"><br><br>
 				<label>Telefone:</label>
-				<input type="text" required="required" id="telefone" name="telefoneUsuario" placeholder="(xx) xxxxx-xxxx" maxlength="15" pattern="\([0-9]{2}\)[\s][0-9]{5}-[0-9]{4}"/><br><br>
+				<input type="text" required="required" maxlength="15" name="telefoneUsuario" placeholder="Telefone"/><br><br>
 				<label>Email:</label>
-				<input type="email" required="required" id="emailUsuario" name="emailUsuario" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+				<input type= "text" required="required" name="email" placeholder="email"><br><br>
+				<input type= "text" required="required" name="emailUsuario" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
 				<label>Confirmar email:</label>
-				<input type="email" required="required" id="emailUsuario2" name="emailUsuario2" placeholder="email" onblur="ValidaEmail()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br><br>
+				<input type= "text" required="required" name="emailUsuario2" placeholder="email" onblur="ValidaEmail()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br><br>
+				<input type= "text" required="required" name="emailUsuario" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+				<label>Confirmar email:</label>
+				<input type= "text" required="required" name="emailUsuario2" placeholder="email" onblur="ValidaEmail()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br><br>
 				<label>Senha:</label>
 				<input type="password" required="required" placeholder="password" name="senhaUsuario">
 				<label>Confirme a senha:</label>
 				<input type="password" required="required" placeholder="password" name="senhaUsuario2" onblur="ValidaSenha()"><br><br>
 				<label>Nickname:</label>
 				<input type="text" required="required" placeholder="nickname" name="nickname"><br><br>
-				<input type="submit" value="Cadastrar">
+				<input class="bnt-cadastrar" type="submit" value="Cadastrar">
 				
 			</form>
 		</div>

@@ -1,4 +1,4 @@
-@CHARSET "utf-8";
+@CHARSET "ISO-8859-1";
 #header{
 	position: absolute;
 	top: 0px;
@@ -30,18 +30,20 @@
 	text-align:center;
 }		
 		
-#formcadastro{
-	position:absolute;
-	left: 15%;
-	margin-top:2px;
-	width:65%;
+#formEntrar{
+	position:relative;
+	margin-top:15px;
+	margin-left:530px;
+	text-align:left;
 	font-size: 25pt;
-	background-color:#e1e1e1;
-	align: center;
-	border-width: thin;
-	border-style: solid;
-	border-color: #5b5b5b;
-	padding-left: 15%;
+}
+
+#formcadastro{
+	position:relative;
+	margin-top:-30px;
+	margin-left:300px;
+	text-align:left;
+	font-size: 25pt;
 }
 
 .cor{
@@ -52,6 +54,8 @@
 }
 	
 #footer{
+	position:absolute;
+	top:100%;
 	position: absolute;
 	top:110%;
 	left:0%;
@@ -69,10 +73,11 @@
 	FONT-SIZE: 35pt;
 }
 
+
 .imagemtop{
 	position: absolute;
 	top: 1%;
-	left:1%;	
+	left:1%;
 	height: 98%;
 	width: 13%;
 }

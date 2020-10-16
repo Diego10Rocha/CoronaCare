@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/buttons-alter.css" >
 <link rel="stylesheet" type="text/css" href="css/escopo.css" >
 <link rel="shortcut icon" href="images/CoronaCare.png" type="image/x-icon"/>
+
 </head>
 <body>
 
