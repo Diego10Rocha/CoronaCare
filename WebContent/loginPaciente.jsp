@@ -36,19 +36,12 @@
 	        		</div>
 				</div>
 			</form>
-<<<<<<< HEAD
 		</div>
 		<div class="inputs">
     			<div>
         			<button class="bnt-entrar" type="submit">Entrar</button></div>
     			<div>
         			<a class="bnt-cadastrar" href="cadastroPaciente.jsp">Cadastrar</a></div>
-=======
-			
-			
-			
-			
->>>>>>> upstream/master
 		</div>
 		
 	</div>
