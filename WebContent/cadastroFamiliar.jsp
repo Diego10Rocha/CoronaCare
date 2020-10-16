@@ -21,7 +21,7 @@
 	<div id="body" class="cor">
 		<div id="formcadastro">
 			<br><br>
-			<form action="RealizarCadastro" method="post">
+			<form action="RealizarCadastroFamiliar" method="post">
 				<label>Nome do Paciente:</label>
 				<input type="text" placeholder="Nome" required="required" maxlength="45" size="37" name="nome"><br><br>
 				<label>Data de Nascimento:</label>

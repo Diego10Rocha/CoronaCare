@@ -21,7 +21,7 @@
 	<div id="body" class="cor">
 		<div id="formEntrar">
 			<br><br>
-			<form action="RealizarCadastro" method="post">
+			<form action="LoginFamiliar" method="post">
 				<label>Email:</label>
 				<input id="input-email" type= "text" required="required" name="email" placeholder="email"><br><br>
 				<label>Senha:</label>

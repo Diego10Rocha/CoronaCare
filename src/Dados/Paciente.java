@@ -1,5 +1,9 @@
 package Dados;
 
+import java.sql.SQLException;
+
+import Persistencia.PacienteDAO;
+
 public class Paciente extends Usuario{
 	
 	private String Nickname;
@@ -12,13 +16,20 @@ public class Paciente extends Usuario{
 	}
 	
 	@Override
-	public boolean login(String email, String senha) {
-		// TODO Auto-generated method stub
-		return false;
+	public Usuario login(String email, String senha) {
+		try {
+			return PacienteDAO.loginPaciente(email, senha);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 	@Override
-	public void cadastrar(Usuario user) {
-		// TODO Auto-generated method stub
+	public boolean cadastrar(Usuario user) {
+		Paciente p = (Paciente) user;
+		p.setNickname(this.Nickname);
+		return PacienteDAO.insertPaciente(p);
 		
 	}
 	

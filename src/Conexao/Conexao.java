@@ -9,25 +9,27 @@ import java.sql.Statement;
 
 public class Conexao {
 	private static Connection con = null;
-	private static final String servidor = "127.0.0.1:8080";
-	private static final String basedados = "CoronaCare";
-	private static final String usuario = "root";
-	private static final String senha = "root";
+	private static final String servidor = "db4free.net:3306";
+	private static final String basedados = "coronacare";
+	private static final String usuario = "coronacare";
+	private static final String senha = "coronacare";
 	
 	public static Connection getConnection() throws SQLException{
-		try{
+		try {
 			new com.mysql.jdbc.Driver();
 			con = DriverManager.getConnection("jdbc:mysql://"+ servidor + "/" + basedados, usuario, senha);
-			System.out.println("Conectado com Sucesso ao Banco!");
+			System.out.println("Conecatado!");
 			return con;
 		} catch (SQLException e) {
-			System.out.println("Erro ao Conectar com o Banco");
-			throw new SQLException(e.getMessage());
-		}
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}	
 	}
 	
 	public static void fechar() {
 		try {
+			if(con!=null)
 			con.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
