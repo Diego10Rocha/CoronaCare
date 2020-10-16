@@ -6,6 +6,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>CoronaCare: Cadastro</title>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<script src="js/FormatCamposJQ.js" type="text/javascript"></script>
+<script src="js/ValidaEmail.js" type="text/javascript"></script>
+<script src="js/ValidaSenha.js" type="text/javascript"></script>
+>>>>>>> 266526a8206e8b0bc429ba94413fb34796afbd4b
 <link rel="stylesheet" type="text/css" href="css/buttons-alter.css" >
 =======
 <script src="js/FormatCamposJQ.js" type="text/javascript"></script>
@@ -38,12 +44,18 @@
 				<input type="text" required="required" maxlength="14" name="telefone" placeholder="Telefone"/><br><br>
 				<label>Email:</label>
 <<<<<<< HEAD
+<<<<<<< HEAD
 				<input type= "text" required="required" name="email" placeholder="email"><br><br>
 =======
 				<input type= "text" required="required" name="emailUsuario" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
 				<label>Confirmar email:</label>
 				<input type= "text" required="required" name="emailUsuario2" placeholder="email" onblur="ValidaEmail()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br><br>
 >>>>>>> upstream/master
+=======
+				<input type= "text" required="required" name="emailUsuario" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+				<label>Confirmar email:</label>
+				<input type= "text" required="required" name="emailUsuario2" placeholder="email" onblur="ValidaEmail()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br><br>
+>>>>>>> 266526a8206e8b0bc429ba94413fb34796afbd4b
 				<label>Senha:</label>
 				<input type="password" required="required" placeholder="password" name="senhaUsuario">
 				<label>Confirme a senha:</label>
