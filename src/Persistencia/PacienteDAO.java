@@ -4,21 +4,82 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import Conexao.Conexao;
 import Dados.Paciente;
 
 public class PacienteDAO {
 	
-	public static Paciente getPaciente(int Id) throws SQLException {
+	public static int getPacienteByNickname(String nickname) throws SQLException {
+		int id_Paciente = 0;
+		ResultSet rs;
+		PreparedStatement stmt;
+		
+		String sql = "select id_Paciente from Paciente where nickname = ?";
+		Connection con = Conexao.getConnection();
+		stmt = con.prepareStatement(sql);
+		stmt.setString(1, nickname);
+		
+		
+		rs = stmt.executeQuery();
+		try {
+			id_Paciente = rs.getInt("id_Paciente");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		rs.close();
+		stmt.close();
+		con.close();
+		
+		return id_Paciente;
+	}
+	
+	public static ArrayList <Paciente> getPacientes() throws SQLException{
+		ArrayList <Paciente> pacientes = new ArrayList<Paciente> ();
 		Paciente p = null;
 		ResultSet rs;
 		PreparedStatement stmt;
 		
-		String sql = "select * from Paciente where id_Paciente = ?";
+		String sql = "select * from Paciente";
 		Connection con = Conexao.getConnection();
 		stmt = con.prepareStatement(sql);
-		stmt.setInt(1, Id);
+		
+		rs = stmt.executeQuery();
+		try {
+			while(rs.next()) {
+				p = new Paciente();
+				p.setIdUsuario(rs.getInt("id_Paciente"));
+				p.setNomeUsuario(rs.getString("nomePaciente"));
+				p.setData_Nascimento(rs.getString("dataNascPaciente"));
+				p.setTelefoneUsuario(rs.getString("telefonePaciente"));
+				p.setTelefoneUsuario(rs.getString("senhaPaciente"));
+				p.setTelefoneUsuario(rs.getString("emailPaciente"));
+				p.setNickname(rs.getString("nickname"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		rs.close();
+		con.close();
+		stmt.close();
+		
+		return pacientes;
+	}
+	
+	public static Paciente getPacienteById(int ID) throws SQLException {
+		Paciente p = null;
+		ResultSet rs;
+		PreparedStatement stmt;
+		
+		String sql = "select id_Paciente from Paciente where nickname = ?";
+		Connection con = Conexao.getConnection();
+		stmt = con.prepareStatement(sql);
+		stmt.setInt(1, ID);
 		
 		
 		rs = stmt.executeQuery();

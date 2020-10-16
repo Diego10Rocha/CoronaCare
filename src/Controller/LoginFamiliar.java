@@ -6,9 +6,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Dados.Familiar;
-import Dados.Usuario;
 
 @WebServlet("/LoginFamiliar")
 public class LoginFamiliar extends HttpServlet {
@@ -20,12 +20,17 @@ public class LoginFamiliar extends HttpServlet {
 		email = request.getParameter("email");
 		senha = request.getParameter("password");
 		System.out.println(email + senha);
-		Usuario user = new Familiar();
-		Familiar paciente = (Familiar) user.login(email, senha);
-		if(paciente != null)
-			response.sendRedirect("perfilFamiliar.jsp");
-		else
-			response.sendRedirect("loginFamiliar.jsp");
+		Familiar familiar = Facade.loginFamiliar(email, senha);
+		if(familiar != null){
+			HttpSession session = request.getSession();
+			
+			session.setAttribute("IdFamiliar", familiar.getIdUsuario());
+			session.setAttribute("NomeUsuario", familiar.getNomeUsuario());
+			session.setAttribute("emailUsuario", familiar.getEmailUsuario());
+			session.setMaxInactiveInterval(2000);
+			response.sendRedirect("RedirecionarPerfilFamiliar");
+		}else
+			response.sendRedirect("RedirecionarLoginFamiliar");
 	}
 
 }

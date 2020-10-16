@@ -21,6 +21,7 @@
 	text-decoration:none;
 	float:left;
 	margin-left:15px;
+	cursor: pointer;
 }
 
 .bnt-cadastrar{
@@ -36,6 +37,7 @@
 	text-decoration:none;
 	margin-left:100px;
 	float:left;
+	cursor: pointer;
 }
 
 .enviar{

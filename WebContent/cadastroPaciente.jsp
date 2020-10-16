@@ -23,7 +23,7 @@
 	
 	<div id="body" class="cor">
 		<div id="formcadastro">
-			<br><br>
+			<br>
 			<form action="RealizarCadastroPaciente" method="post">
 			
 				<label>Nome do Paciente:</label>
@@ -33,16 +33,12 @@
 				<label>Telefone:</label>
 				<input type="text" required="required" maxlength="15" name="telefoneUsuario" placeholder="Telefone"/><br><br>
 				<label>Email:</label>
-				<input type= "text" required="required" name="email" placeholder="email"><br><br>
-				<input type= "text" required="required" name="emailUsuario" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+				<input type= "email" required="required" name="emailUsuario" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
 				<label>Confirmar email:</label>
-				<input type= "text" required="required" name="emailUsuario2" placeholder="email" onblur="ValidaEmail()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br><br>
-				<input type= "text" required="required" name="emailUsuario" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-				<label>Confirmar email:</label>
-				<input type= "text" required="required" name="emailUsuario2" placeholder="email" onblur="ValidaEmail()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br><br>
+				<input type= "email" required="required" name="emailUsuario2" placeholder="email" onblur="ValidaEmail()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br><br>
 				<label>Senha:</label>
 				<input type="password" required="required" placeholder="password" name="senhaUsuario">
-				<label>Confirme a senha:</label>
+				<label>Confirmar senha:</label>
 				<input type="password" required="required" placeholder="password" name="senhaUsuario2" onblur="ValidaSenha()"><br><br>
 				<label>Nickname:</label>
 				<input type="text" required="required" placeholder="nickname" name="nickname"><br><br>

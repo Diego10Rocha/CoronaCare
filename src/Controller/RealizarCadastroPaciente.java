@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Dados.Paciente;
 
 
 @WebServlet("/RealizarCadastroPaciente")
@@ -17,15 +16,16 @@ public class RealizarCadastroPaciente extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Paciente p = new Paciente();
-		p.setNomeUsuario(request.getParameter("nome"));
-		p.setEmailUsuario(request.getParameter("emailUsuario"));
-		p.setData_Nascimento(request.getParameter("datanascimento"));
-		p.setNickname(request.getParameter("nickname"));
-		p.setSenhaUsuario(request.getParameter("senhaUsuario"));
-		p.setTelefoneUsuario(request.getParameter("telefoneUsuario"));
-		System.out.println(p.getNomeUsuario()+p.getEmailUsuario()+p.getNickname()+p.getNomeUsuario()+p.getData_Nascimento()+p.getTelefoneUsuario());
-		p.cadastrar(p);
+		String nome, email, data, nickname, senha, telefone;
+		nome = request.getParameter("nome");
+		email = request.getParameter("emailUsuario");
+		data = request.getParameter("datanascimento");
+		nickname = request.getParameter("nickname");
+		senha = request.getParameter("senhaUsuario");
+		telefone = request.getParameter("telefoneUsuario");
+		
+		Facade.cadastrarPaciente(nome, email, data, nickname, senha, telefone);
+		
 		response.sendRedirect("loginPaciente.jsp");
 		System.out.println("Paciente cadastrado com sucesso!");
 	}

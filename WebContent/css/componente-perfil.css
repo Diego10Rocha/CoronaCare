@@ -46,8 +46,9 @@ a {
 }
 
 .menuItem-lateral:hover {
-	background-color: white;
+	background-color: #FF6347;
 	box-shadow: 4px 4px 4px lightgray;
+	color: black;
 }
 
 #body-perfil{

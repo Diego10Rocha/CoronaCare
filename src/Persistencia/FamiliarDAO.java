@@ -11,6 +11,7 @@ import Dados.Paciente;
 import Dados.Usuario;
 
 public class FamiliarDAO {
+	
 	public static Familiar getFamiliar(int Id) throws SQLException {
 		Familiar f = null;
 		ResultSet rs;
@@ -97,8 +98,8 @@ public class FamiliarDAO {
 			f.setNomeUsuario(rs.getString("nomeFamiliar"));
 			f.setData_Nascimento(rs.getString("dataNascFamiliar"));
 			f.setTelefoneUsuario(rs.getString("telefoneFamiliar"));
-			f.setTelefoneUsuario(rs.getString("senhaFamiliar"));
-			f.setTelefoneUsuario(rs.getString("emailFamiliar"));
+			f.setSenhaUsuario(rs.getString("senhaFamiliar"));
+			f.setEmailUsuario(rs.getString("emailFamiliar"));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -134,7 +135,7 @@ public class FamiliarDAO {
 	public static boolean insertFamiliar(Usuario f) {
 		PreparedStatement stmt;
 		Connection con;
-		String sql = "insert into Paciente(nomeFamiliar, emailFamiliar, senhaFamiliar, dataNascFamiliar, telefoneFamiliar)"
+		String sql = "insert into Familiar(nomeFamiliar, emailFamiliar, senhaFamiliar, dataNascFamiliar, telefoneFamiliar)"
 				+ "values (?,?,?,?,?)";
 		try {
 			con = Conexao.getConnection();
@@ -168,6 +169,27 @@ public class FamiliarDAO {
 			stmt.setString(3, f.getSenhaUsuario());
 			stmt.setString(4, f.getData_Nascimento());
 			stmt.setString(5, f.getTelefoneUsuario());
+			stmt.executeUpdate();
+			con.close();
+			stmt.close();
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	public static boolean insertPaciente_has_Familiar(int id_Familiar, int id_Paciente){
+		PreparedStatement stmt;
+		Connection con;
+		String sql = "insert into Paciente_has_Familiar(id_Paciente, id_Familiar)"
+				+ "values (?,?)";
+		try {
+			con = Conexao.getConnection();
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1,  id_Paciente);
+			stmt.setInt(2, id_Familiar);
 			stmt.executeUpdate();
 			con.close();
 			stmt.close();

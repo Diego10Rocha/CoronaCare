@@ -1,6 +1,7 @@
 package Dados;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import Persistencia.PacienteDAO;
 
@@ -31,5 +32,12 @@ public class Paciente extends Usuario{
 		
 	}
 	
+	public int getPacienteByNickname(String nickname) throws SQLException{
+		return PacienteDAO.getPacienteByNickname(nickname);
+	}
+	
+	public ArrayList<Paciente> getPacientes() throws SQLException{
+		return PacienteDAO.getPacientes();
+	}
 
 }

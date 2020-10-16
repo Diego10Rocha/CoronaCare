@@ -9,6 +9,7 @@
 	font-family: "arial";
 	opacity: 0.85;
 	transition: border-color 0.2s;
+	cursor: pointer;
 }
 
 .btn-cadastro:hover{

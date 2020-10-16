@@ -25,13 +25,18 @@
 				<input id="input-email" type= "text" required="required" name="email" placeholder="email"><br><br>
 				<label>Senha:</label>
 				<input id="input-senha" type="password" required="required" placeholder="**********" name="password"><br><br>
+			
+				<div class="inputs">
+	    			<div>
+	        			<button class="bnt-entrar" type="submit">Entrar</button>
+	        		</div>
+	    			<div>
+	        			<a class="bnt-cadastrar" href="cadastroFamiliar.jsp">Cadastrar</a>
+	        		</div>
+				</div>
+				
 			</form>
-			<div class="inputs">
-    			<div>
-        			<button class="bnt-entrar" type="submit">Entrar</button></div>
-    			<div>
-        			<a class="bnt-cadastrar" href="cadastroFamiliar.jsp">Cadastrar</a></div>
-			</div>
+			
 			
 			
 			

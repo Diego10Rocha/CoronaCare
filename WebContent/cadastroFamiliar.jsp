@@ -25,7 +25,7 @@
 		<div id="formcadastro">
 			<br><br>
 			<form action="RealizarCadastroFamiliar" method="post">
-				<label>Nome do Paciente:</label>
+				<label>Nome do Familiar:</label>
 				<input type="text" placeholder="Nome" required="required" maxlength="45" size="37" name="nome" autofocus><br><br>
 				<label>Data de Nascimento:</label>
 				<input type="date" required="required" value="" name="datanascimento"><br><br>
@@ -39,7 +39,7 @@
 				<input type="password" required="required" placeholder="password" name="senhaUsuario">
 				<label>Confirme a senha:</label>
 				<input type="password" required="required" placeholder="password" name="senhaUsuario2" onblur="ValidaSenha()"><br><br>
-				<input type="submit" value="Cadastrar">
+				<button class="bnt-entrar" type="submit">Cadastrar</button>
 				
 			</form>
 		</div>

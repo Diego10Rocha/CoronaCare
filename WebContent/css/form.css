@@ -29,9 +29,23 @@
 }
 
 .form-control:hover {
-		transition: none;
+		transition: border-color 0.2s;
 }
 
 p{
 	font-size:20;
+}
+
+#form-add-patient-to-family{
+	padding: center;
+	visibility: hidden;
+	border-top: 10%;
+	
+}
+
+#send-message{
+	padding: center;
+	visibility: hidden;
+	border-top: 10%;
+	
 }
