@@ -31,9 +31,23 @@ primary key(id_Paciente, id_Familiar),
 foreign key(id_Paciente) references Paciente(id_Paciente),
 foreign key(id_Familiar) references Familiar(id_Familiar)
 );
+
+drop table if exists Mensagem;
+create table Mensagem(
+id_Mensagem int unsigned not null auto_increment primary key,
+mensagem varchar(1000) not null,
+tipo int(1) not null,
+id_Familiar int unsigned not null,
+id_Paciente int unsigned not null,
+foreign key (id_Familiar) references Familiar(id_Familiar),
+foreign key (id_Paciente) references Paciente(id_Paciente)
+);
+
+
 show tables;
 
 describe familiar;
+desc Mensagem;
 
 insert into Familiar(nomeFamiliar, emailFamiliar, senhaFamiliar, dataNascFamiliar, telefoneFamiliar)
 	values("diego", "email", "123", "2001/03/20", "40028922");

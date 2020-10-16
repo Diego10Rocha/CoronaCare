@@ -19,6 +19,7 @@
 	text-decoration:none;
 	float:left;
 	margin-left:15px;
+	cursor: pointer;
 }
 
 .bnt-cadastrar{

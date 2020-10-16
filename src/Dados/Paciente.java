@@ -27,9 +27,7 @@ public class Paciente extends Usuario{
 	}
 	@Override
 	public boolean cadastrar(Usuario user) {
-		Paciente p = (Paciente) user;
-		p.setNickname(this.Nickname);
-		return PacienteDAO.insertPaciente(p);
+		return PacienteDAO.insertPaciente((Paciente)user);
 		
 	}
 	

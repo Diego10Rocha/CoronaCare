@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -22,7 +23,7 @@
 			<br><br>
 			<form action="LoginPaciente" method="post">
 				<label>Email:</label>
-				<input id="input-email" type= "text" required="required" name="email" placeholder="email" autofocus><br><br>
+				<input id="input-email" type= "email" required="required" name="email" placeholder="email" autofocus><br><br>
 				<label>Senha:</label>
 				<input id="input-senha" type="password" required="required" placeholder="****" name="password"><br><br>
 				

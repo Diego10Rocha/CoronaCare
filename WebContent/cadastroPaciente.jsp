@@ -31,7 +31,7 @@
 				<label>Data de Nascimento:</label>
 				<input type="date" required="required" value="" name="datanascimento"><br><br>
 				<label>Telefone:</label>
-				<input type="text" required="required" id="telefone" onblur="javascript: formatarCampo(this);" name="telefone" placeholder="Telefone" maxlength="15" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}"/><br><br>
+				<input type="text" required="required" id="telefone" name="telefoneUsuario" placeholder="(xx) xxxxx-xxxx" maxlength="15" pattern="\([0-9]{2}\)[\s][0-9]{5}-[0-9]{4}"/><br><br>
 				<label>Email:</label>
 				<input type="email" required="required" id="emailUsuario" name="emailUsuario" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
 				<label>Confirmar email:</label>

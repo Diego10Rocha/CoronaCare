@@ -23,7 +23,7 @@ public class RealizarCadastroPaciente extends HttpServlet {
 		p.setData_Nascimento(request.getParameter("datanascimento"));
 		p.setNickname(request.getParameter("nickname"));
 		p.setSenhaUsuario(request.getParameter("senhaUsuario"));
-		p.setTelefoneUsuario(request.getParameter("telefone"));
+		p.setTelefoneUsuario(request.getParameter("telefoneUsuario"));
 		System.out.println(p.getNomeUsuario()+p.getEmailUsuario()+p.getNickname()+p.getNomeUsuario()+p.getData_Nascimento()+p.getTelefoneUsuario());
 		p.cadastrar(p);
 		response.sendRedirect("loginPaciente.jsp");

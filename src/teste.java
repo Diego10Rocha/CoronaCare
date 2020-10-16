@@ -1,4 +1,5 @@
 import java.sql.Connection;
+import java.sql.DriverManager;
 //import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -12,22 +13,29 @@ public class teste {
 		// TODO Auto-generated method stub
 
 		//Usuario user = new Paciente();
-		Conexao.fechar();
-		try {
+		//Conexao.fechar();
+		/*try {
 			Connection con = Conexao.getConnection();
 			con.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println("Erro!");
-		}
+		}*/
 		
-		/*
-		Connection conexao = DriverManager.getConnection(
-				"jdbc:mysql://localhost/"+"coronacare", "root","root"+ "?serverTimezone=UTC");
-				System.out.println("Conectado!");
-				conexao.close();
+	
+		Connection conexao;
+		try {
+			conexao = DriverManager.getConnection(
+					"jdbc:mysql://localhost/"+"coronacare", "root","root");
+			System.out.println("Conectado!");
+			conexao.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 				
+	/*			
 		try {
 			DriverManager.getConnection(
 			"jdbc:mysql://localhost/coronacare", "root", "root");

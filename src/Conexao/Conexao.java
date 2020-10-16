@@ -9,10 +9,13 @@ import java.sql.Statement;
 
 public class Conexao {
 	private static Connection con = null;
-	private static final String servidor = "db4free.net:3306";
+	//private static final String servidor = "db4free.net:3306";
+	private static final String servidor = "localhost";
 	private static final String basedados = "coronacare";
-	private static final String usuario = "coronacare";
-	private static final String senha = "coronacare";
+	//private static final String usuario = "coronacare";
+	private static final String usuario = "root";
+	//private static final String senha = "coronacare";
+	private static final String senha = "root";
 	
 	public static Connection getConnection() throws SQLException{
 		try {
