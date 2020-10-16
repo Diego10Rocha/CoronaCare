@@ -9,21 +9,13 @@
 <link rel="stylesheet" type="text/css" href="css/menu.css" >
 <link rel="stylesheet" type="text/css" href="css/escopo.css" >
 <link rel="shortcut icon" href="images/CoronaCare.png" type="image/x-icon"/>
-<style type="text/css">
-.headerTexto {
-	color: white;
-	font-family:"ar blanca";
-	text-align:center;
-	font-weight:bold;
-	FONT-SIZE: 35pt;
-}
-</style>
+
 </head>
 
 <body>
 <div id="header">
 	<img class="imagemtop" src="images/CoronaCare.png"  width="100%">
-	<p class="headerTexto">CoronaCare</p>
+	<p class="headerText">CoronaCare</p>
 </div>
 <div id="body">
 	<div id="menu">

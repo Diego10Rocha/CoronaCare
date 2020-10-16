@@ -1,17 +1,17 @@
 import java.sql.Connection;
-import java.sql.DriverManager;
+//import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import Conexao.Conexao;
-import Dados.Paciente;
-import Dados.Usuario;
+//import Dados.Paciente;
+//import Dados.Usuario;
 
 public class teste {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Usuario user = new Paciente();
+		//Usuario user = new Paciente();
 		Conexao.fechar();
 		try {
 			Connection con = Conexao.getConnection();

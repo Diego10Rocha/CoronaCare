@@ -1,0 +1,61 @@
+@CHARSET "utf-8";
+
+#center {
+	position: absolute;
+	top: 20%;
+	left: 25%;
+	height: 50%;
+	background-color: silver;
+	width: 40%;
+	opacity: 0.9;
+	border-radius: 50px 50px 50px 50px;
+	text-align: center;
+}
+
+#menu-lateral {
+	position: absolute;
+	top: 15%;
+	left: 0px;
+	background-color: #000005;
+	width: 20%;
+	height: 900px;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#lateral a {
+	color: white;
+	font-family: verdana;
+	font-size: 24px;
+}
+
+#lateral a:hover {
+	color: black;
+}
+
+.menuItem-lateral {
+	margin: 5px;
+	padding: 10px;
+	text-align: center;
+	border-radius: 20px 0px 20px 0px;
+	/* Canto superior esq, sup dir, inf dir inf esq */
+	background-color: gray;
+}
+
+.menuItem-lateral:hover {
+	background-color: white;
+	box-shadow: 4px 4px 4px lightgray;
+}
+
+#body-perfil{
+	position: absolute;
+	top: 15%;
+	left: 20%;
+	height: 85%;
+	width: 80%;
+	background-color: red;
+	color: red;
+}

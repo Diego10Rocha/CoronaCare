@@ -39,3 +39,12 @@ $(function() {
 $(function() {
 	  $("#data").mask("99/99/9999");  });
 })(jQuery);
+
+//Mascara para telefone sem jQuery
+function formatarCampo(campoTexto) {
+    campoTexto.value = mascaraTelefone(campoTexto.value);
+}
+
+function mascaraTelefone(valor) {
+return valor.replace(/(\d{2})(\d{5})/g,"\($1)\$2-");
+}

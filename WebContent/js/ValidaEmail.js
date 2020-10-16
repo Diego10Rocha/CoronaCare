@@ -5,7 +5,7 @@ function ValidaEmail(){
 	emailUsuario2=document.forms[0].emailUsuario2.value;
 	
 	if(emailUsuario != emailUsuario2){
-		alert('Os emails correspondem!');
+		alert('Os emails não correspondem!');
 		document.forms[0].emailUsuario.value="";
 		document.forms[0].emailUsuario2.value="";
 		document.getElementById('emailUsuario').focus();
