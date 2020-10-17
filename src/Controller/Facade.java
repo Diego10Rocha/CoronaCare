@@ -2,6 +2,7 @@ package Controller;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import Dados.Familiar;
 import Dados.Mensagem;
@@ -67,6 +68,11 @@ public class Facade {
 		m.setMensagem(mensagem);
 		m.setTipo(tipo);
 		return m.insertMensagem(m);
+	}
+	
+	public static List<Mensagem> getMensagens(int id_Paciente) throws SQLException{
+		Mensagem m = new Mensagem();
+		return m.getMensagens(id_Paciente);
 	}
 	
 }

@@ -90,6 +90,6 @@ select Mensagem.id_Mensagem, Mensagem.mensagem, Mensagem.tipo, Mensagem.id_Pacie
 from Familiar inner join Mensagem on Familiar.id_Familiar = Mensagem.id_Familiar
 inner join Paciente on Mensagem.id_Paciente = Paciente.id_Paciente;
 
-select * from vMensagemPaciente where id_Familiar = 2 and id_Paciente = 2;
+select * from vMensagemPaciente where id_Paciente = 2;
 
 select * from vPacientesFamiliar where id_Familiar = 1;

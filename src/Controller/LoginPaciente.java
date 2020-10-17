@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Dados.Paciente;
 
@@ -21,9 +22,15 @@ public class LoginPaciente extends HttpServlet {
 		senha = request.getParameter("password");
 		System.out.println(email + senha);
 		Paciente paciente = Facade.loginPaciente(email, senha);
-		if(paciente != null)
-			response.sendRedirect("perfilPaciente.jsp");
-		else
+		if(paciente != null){
+			HttpSession session = request.getSession();
+			
+			session.setAttribute("IdPaciente", paciente.getIdUsuario());
+			session.setAttribute("NomeUsuario", paciente.getNomeUsuario());
+			session.setAttribute("emailUsuario", paciente.getEmailUsuario());
+			session.setMaxInactiveInterval(2000);
+			response.sendRedirect("RedirecionarPerfilPaciente");
+		}else
 			response.sendRedirect("loginPaciente.jsp");
 	}
 

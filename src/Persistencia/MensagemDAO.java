@@ -4,21 +4,25 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import Conexao.Conexao;
 import Dados.Mensagem;
 
 public class MensagemDAO {
 	
-	public static Mensagem getMensagem(int Id) throws SQLException {
+	public static List<Mensagem> getMensagem(int id_Familiar, int id_Paciente) throws SQLException {
 		Mensagem m = null;
+		List <Mensagem> message = new ArrayList<>();
 		ResultSet rs;
 		PreparedStatement stmt;
 		
-		String sql = "select * from Mensagem where id_Familiar = ?";
+		String sql = "select * from Mensagem where id_Familiar = ? and id_Paciente = ?";
 		Connection con = Conexao.getConnection();
 		stmt = con.prepareStatement(sql);
-		stmt.setInt(1, Id);
+		stmt.setInt(1, id_Familiar);
+		stmt.setInt(2, id_Paciente);
 		
 		rs = stmt.executeQuery();
 		try {
@@ -29,6 +33,7 @@ public class MensagemDAO {
 			m.setIdFamiliar(rs.getInt("id_Familiar"));
 			m.setMensagem(rs.getString("mensagem"));
 			m.setTipo(rs.getInt("tipo"));
+			message.add(m);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -38,7 +43,40 @@ public class MensagemDAO {
 		stmt.close();
 		rs.close();
 		
-		return m;
+		return message;
+	}
+	
+	public static List<Mensagem> getMensagens(int id_Paciente) throws SQLException {
+		Mensagem m = null;
+		List <Mensagem> message = new ArrayList<>();
+		ResultSet rs;
+		PreparedStatement stmt;
+		
+		String sql = "select * from vMensagemPaciente where id_Paciente = ?";
+		Connection con = Conexao.getConnection();
+		stmt = con.prepareStatement(sql);
+		stmt.setInt(1, id_Paciente);
+		
+		rs = stmt.executeQuery();
+		try {
+			rs.next();
+			m = new Mensagem();
+			m.setIdMensagem(rs.getInt("id_Mensagem"));
+			m.setIdPaciente(rs.getInt("id_Paciente"));
+			m.setIdFamiliar(rs.getInt("id_Familiar"));
+			m.setMensagem(rs.getString("mensagem"));
+			m.setTipo(rs.getInt("tipo"));
+			message.add(m);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		con.close();
+		stmt.close();
+		rs.close();
+		
+		return message;
 	}
 	
 	public static boolean deleteMensagem(int Id) {

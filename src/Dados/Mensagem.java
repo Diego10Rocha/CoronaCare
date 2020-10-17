@@ -1,5 +1,8 @@
 package Dados;
 
+import java.sql.SQLException;
+import java.util.List;
+
 import Persistencia.MensagemDAO;
 
 public class Mensagem {
@@ -42,5 +45,9 @@ public class Mensagem {
 	
 	public boolean insertMensagem(Mensagem message){
 		return MensagemDAO.insertMensagem(message);
+	}
+	
+	public List <Mensagem> getMensagens(int id_Paciente) throws SQLException{
+		return MensagemDAO.getMensagens(id_Paciente);
 	}
 }
