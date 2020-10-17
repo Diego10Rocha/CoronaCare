@@ -75,6 +75,22 @@
 				<Button class="bnt-cadastrar" type="submit">Enviar</Button>
 			</form>
 		</div>
+		
+		<div id="send-message">
+			<form action="EnviarMensagemTexto" method="post">
+				<label>Familiar doente:</label>
+				<select name="id_Paciente">
+					<c:forEach items="${ListaFamiliarDoente}" var="paciente">
+						<option value="${paciente.getIdUsuario()}">${paciente.getNickname()}</option>
+					</c:forEach>
+				</select>
+				<label>Multimidia:</label>
+				<input type="file" placeholder="Insira aqui o seu arquivo" name="mensagem" maxlength="1000"><br>
+				<input type="hidden" name="id_Familiar" value="${IdFamiliar}">
+				<input type="hidden" name="tipo" value="3">
+				<Button class="bnt-cadastrar" type="submit">Enviar</Button>
+			</form>
+		</div>
 	</div>
 
 	
