@@ -56,7 +56,23 @@
 				<input type="text" placeholder="Digite uma mensagem..." name="mensagem" maxlength="1000"><br>
 				<input type="hidden" name="id_Familiar" value="${IdFamiliar}">
 				<input type="hidden" name="tipo" value="1">
-				<Button class="bnt-cadastrar" type="submit">Cadastrar</Button>
+				<Button class="bnt-cadastrar" type="submit">Enviar</Button>
+			</form>
+		</div>
+		
+		<div id="send-message">
+			<form action="EnviarMensagemTexto" method="post">
+				<label>Familiar doente:</label>
+				<select name="id_Paciente">
+					<c:forEach items="${ListaFamiliarDoente}" var="paciente">
+						<option value="${paciente.getIdUsuario()}">${paciente.getNickname()}</option>
+					</c:forEach>
+				</select>
+				<label>Video do YouTube:</label>
+				<input type="text" placeholder="Insira aqui o link do video do YouTube" name="mensagem" maxlength="1000"><br>
+				<input type="hidden" name="id_Familiar" value="${IdFamiliar}">
+				<input type="hidden" name="tipo" value="2">
+				<Button class="bnt-cadastrar" type="submit">Enviar</Button>
 			</form>
 		</div>
 	</div>

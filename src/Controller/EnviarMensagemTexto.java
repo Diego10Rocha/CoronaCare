@@ -15,11 +15,10 @@ public class EnviarMensagemTexto extends HttpServlet {
 		// TODO Auto-generated method stub
 		int id_Paciente = 0, id_Familiar, tipo;
 		String mensagem = null;
-		tipo = 1;
 		id_Familiar = Integer.parseInt(request.getParameter("id_Familiar"));
 		id_Paciente = Integer.parseInt(request.getParameter("id_Paciente"));
 		mensagem = request.getParameter("mensagem");
-		tipo = Integer.parseInt("tipo");
+		tipo = Integer.parseInt(request.getParameter("tipo"));
 		Facade.insertMensagem(mensagem, tipo, id_Familiar, id_Paciente);
 		mensagem = request.getParameter("mensagem");
 		

@@ -27,7 +27,14 @@ public class RedirecionarPerfilFamiliar extends HttpServlet {
 	}else if(session.getAttribute("emailUsuario")!=null){
 		
 		Familiar familiar = new Familiar();
-		List <Paciente> familiares = familiar.getFamiliarDoente();
+		int id_Familiar = (int) session.getAttribute("IdFamiliar");
+		List<Paciente> familiares = null;
+		try {
+			familiares = familiar.getFamiliarDoente(id_Familiar);
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		request.setAttribute("ListaFamiliarDoente", familiares);
 		
 		List <Paciente> pacientes = null;

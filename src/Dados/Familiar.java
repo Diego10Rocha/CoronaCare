@@ -1,20 +1,14 @@
 package Dados;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import Persistencia.FamiliarDAO;
 
 public class Familiar extends Usuario{
-	
-	private List<Paciente> FamiliarDoente= new ArrayList<>();
 
-	public List<Paciente> getFamiliarDoente() {
-		return FamiliarDoente;
-	}
-	public void addFamiliarDoente(Paciente familiarDoente) {
-		this.FamiliarDoente.add(familiarDoente);
+	public List<Paciente> getFamiliarDoente(int id_Familiar) throws SQLException {
+		return FamiliarDAO.getPacientes(id_Familiar);
 	}
 	
 	@Override
