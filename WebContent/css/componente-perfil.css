@@ -18,7 +18,7 @@
 	left: 0px;
 	background-color: #000005;
 	width: 20%;
-	height: 900px;
+	height: 100%;
 }
 
 a {
@@ -55,8 +55,9 @@ a {
 	position: absolute;
 	top: 15%;
 	left: 20%;
-	height: 85%;
+	height: 100%;
 	width: 80%;
-	background-color: red;
-	color: red;
+	background-color: #FF6347;
+	color: white;
+	visibility: visible;
 }

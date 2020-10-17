@@ -58,6 +58,7 @@ public class PacienteDAO {
 				p.setTelefoneUsuario(rs.getString("senhaPaciente"));
 				p.setTelefoneUsuario(rs.getString("emailPaciente"));
 				p.setNickname(rs.getString("nickname"));
+				pacientes.add(p);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

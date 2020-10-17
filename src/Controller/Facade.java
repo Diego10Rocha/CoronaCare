@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import Dados.Familiar;
+import Dados.Mensagem;
 import Dados.Paciente;
 import Dados.Usuario;
 
@@ -57,6 +58,15 @@ public class Facade {
 	public static ArrayList<Paciente> getPacientes() throws SQLException{
 		Paciente paciente = new Paciente();
 		return paciente.getPacientes();
+	}
+	
+	public static boolean insertMensagem(String mensagem, int tipo, int id_Familiar, int id_Paciente){
+		Mensagem m = new Mensagem();
+		m.setIdFamiliar(id_Familiar);
+		m.setIdPaciente(id_Paciente);
+		m.setMensagem(mensagem);
+		m.setTipo(tipo);
+		return m.insertMensagem(m);
 	}
 	
 }
