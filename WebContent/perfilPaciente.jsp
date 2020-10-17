@@ -3,18 +3,32 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>CoronaCare</title>
-
-<link rel="stylesheet" type="text/css" href="css/escopo.css" >
-<link rel="shortcut icon" href="images/CoronaCare.png" type="image/x-icon"/>
+	<meta charset="utf-8">
+	<title>CoronaCare</title>
+	<link rel="stylesheet" type="text/css" href="css/perfilPaciente.css" >
+	<link rel="shortcut icon" href="images/CoronaCare.png" type="image/x-icon"/>
 
 </head>
 <body>
 
-	<div id="header">
-		<img class="imagemtop" src="images/CoronaCare.png"  width="100%">
+	<div id="headerPerfilP">
 		<p class="headerText">CoronaCare</p>
+		  <a href="index.jsp" style="color:black">
+		 	<button id="sairLogin">❌
+		 	</button> 
+		  </a>
+		  <a href="index.jsp" style="color:black">
+		 	<button id="excluirPaciente">🗑</button> 
+		  </a>
+		  <a href="index.jsp" style="color:black">
+		  	<button id="gerarResumo">🚫</button>
+		  </a>
+		  <a href="index.jsp" style="color:black">
+			<button id="verResumos">💾</button>  
+		  </a>
+		  <a href="index.jsp" style="color:black">
+		  	<button id="excluirConta">▶</button>
+		  </a>
 	</div>
 	
 	<div id="body">
