@@ -11,7 +11,7 @@
 <body>
 
 	<div id="header">
-		<img class="imagemtop" src="images/CoronaCare.png"  width="100%">
+		<a href="index.jsp"><img class="imagemtop" src="images/CoronaCare.png"  width="100%"></a>
 		<p class="headerText">
 			<a href="index.jsp" class="title">CoronaCare</a>
 		</p>
