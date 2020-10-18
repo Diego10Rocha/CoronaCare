@@ -125,8 +125,8 @@ public class PacienteDAO {
 			p.setNomeUsuario(rs.getString("nomePaciente"));
 			p.setData_Nascimento(rs.getString("dataNascPaciente"));
 			p.setTelefoneUsuario(rs.getString("telefonePaciente"));
-			p.setTelefoneUsuario(rs.getString("senhaPaciente"));
-			p.setTelefoneUsuario(rs.getString("emailPaciente"));
+			p.setSenhaUsuario(rs.getString("senhaPaciente"));
+			p.setEmailUsuario(rs.getString("emailPaciente"));
 			p.setNickname(rs.getString("nickname"));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

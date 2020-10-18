@@ -33,6 +33,7 @@ public class MensagemDAO {
 			m.setIdFamiliar(rs.getInt("id_Familiar"));
 			m.setMensagem(rs.getString("mensagem"));
 			m.setTipo(rs.getInt("tipo"));
+			m.setNomeFamiliar(rs.getString("nomeFamiliar"));
 			message.add(m);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -59,14 +60,17 @@ public class MensagemDAO {
 		
 		rs = stmt.executeQuery();
 		try {
-			rs.next();
-			m = new Mensagem();
-			m.setIdMensagem(rs.getInt("id_Mensagem"));
-			m.setIdPaciente(rs.getInt("id_Paciente"));
-			m.setIdFamiliar(rs.getInt("id_Familiar"));
-			m.setMensagem(rs.getString("mensagem"));
-			m.setTipo(rs.getInt("tipo"));
-			message.add(m);
+			while(rs.next()){
+				m = new Mensagem();
+				m.setIdMensagem(rs.getInt("id_Mensagem"));
+				m.setIdPaciente(rs.getInt("id_Paciente"));
+				m.setIdFamiliar(rs.getInt("id_Familiar"));
+				m.setMensagem(rs.getString("mensagem"));
+				m.setTipo(rs.getInt("tipo"));
+				m.setNomeFamiliar(rs.getString("nomeFamiliar"));
+				message.add(m);
+				
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

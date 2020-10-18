@@ -26,8 +26,8 @@ public class LoginFamiliar extends HttpServlet {
 			HttpSession session = request.getSession();
 			
 			session.setAttribute("IdFamiliar", familiar.getIdUsuario());
-			session.setAttribute("NomeUsuario", familiar.getNomeUsuario());
-			session.setAttribute("emailUsuario", familiar.getEmailUsuario());
+			session.setAttribute("NomeFamiliar", familiar.getNomeUsuario());
+			session.setAttribute("emailFamiliar", familiar.getEmailUsuario());
 			session.setMaxInactiveInterval(2000);
 			response.sendRedirect("RedirecionarPerfilFamiliar");
 		}else

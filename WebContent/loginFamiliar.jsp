@@ -10,6 +10,14 @@
 </head>
 <body>
 
+	<%
+		HttpSession newSession=request.getSession();
+
+		if(session.getAttribute("emailFamiliar") != null){
+		response.sendRedirect("RedirecionarPerfilFamiliar");
+		}
+	%>
+
 	<div id="header">
 		<a href="index.jsp"><img class="imagemtop" src="images/CoronaCare.png"  width="100%"></a>
 		<p class="headerText">

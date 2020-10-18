@@ -63,6 +63,8 @@ a {
 }
 
 #see-message{
+	top: 20%;
 	display: flex;
 	position: relative;
+	background-color: #ff8040;
 }

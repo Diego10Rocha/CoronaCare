@@ -18,7 +18,13 @@
 	<link rel="shortcut icon" href="images/CoronaCare.png" type="image/x-icon"/>
 </head>
 <body>
-	<c:if test="${empty emailUsuario}"> response.sendRedirect("RedirecionarLoginFamiliar");</c:if>
+	<%
+		HttpSession newSession=request.getSession();
+
+		if(session.getAttribute("emailFamiliar") == null){
+		response.sendRedirect("RedirecionarLoginFamiliar");
+		}
+	%>
 	<div id="header">
 		<img class="imagemtop" src="images/CoronaCare.png"  width="100%">
 		<p class="headerText">CoronaCare</p>

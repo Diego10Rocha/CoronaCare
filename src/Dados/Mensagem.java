@@ -11,6 +11,7 @@ public class Mensagem {
 	private int IdMensagem;
 	private String Mensagem;
 	private int tipo;
+	private String nomeFamiliar;
 	
 	public int getIdPaciente() {
 		return IdPaciente;
@@ -42,6 +43,12 @@ public class Mensagem {
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
+	public String getNomeFamiliar() {
+		return nomeFamiliar;
+	}
+	public void setNomeFamiliar(String nomeFamiliar) {
+		this.nomeFamiliar = nomeFamiliar;
+	}
 	
 	public boolean insertMensagem(Mensagem message){
 		return MensagemDAO.insertMensagem(message);
@@ -50,4 +57,5 @@ public class Mensagem {
 	public List <Mensagem> getMensagens(int id_Paciente) throws SQLException{
 		return MensagemDAO.getMensagens(id_Paciente);
 	}
+
 }

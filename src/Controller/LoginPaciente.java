@@ -26,8 +26,8 @@ public class LoginPaciente extends HttpServlet {
 			HttpSession session = request.getSession();
 			
 			session.setAttribute("IdPaciente", paciente.getIdUsuario());
-			session.setAttribute("NomeUsuario", paciente.getNomeUsuario());
-			session.setAttribute("emailUsuario", paciente.getEmailUsuario());
+			session.setAttribute("NomePaciente", paciente.getNomeUsuario());
+			session.setAttribute("emailPaciente", paciente.getEmailUsuario());
 			session.setMaxInactiveInterval(2000);
 			response.sendRedirect("RedirecionarPerfilPaciente");
 		}else

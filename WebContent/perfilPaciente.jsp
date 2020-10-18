@@ -18,11 +18,20 @@
 
 </head>
 <body>
+	<%
+		HttpSession newSession=request.getSession();
+
+		if(session.getAttribute("emailPaciente") == null){
+		response.sendRedirect("RedirecionarLoginPaciente");
+		}
+		System.out.println(session.getAttribute("emailPaciente"));
+	%>
+
 	<div id="header">
 		<img class="imagemtop" src="images/CoronaCare.png"  width="100%">
 		<p class="headerText">CoronaCare</p>
 	</div>
-	<c:if test="${empty emailUsuario}"> response.sendRedirect("RedirecionarLoginFamiliar");</c:if>
+	
 	<div id="headerPerfilP">
 		<p class="headerText">CoronaCare</p>
 		  <a href="index.jsp" style="color:black">
@@ -46,9 +55,17 @@
 	<div id="body">
 		<div id="see-message">
 			<c:forEach items="${ListaMensagens}" var="message">
-				<c:if test="${message.tipo==2}"> 
-						<iframe width="560" height="315" src="${message.getMensagem}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<label>Nome do familiar: </label>
+				<c:if test="${message.getTipo()==1}">
+					<b>${message.getNomeFamiliar() }</b>
+					<input type="text" readonly="readonly" value="${message.getMensagem() }">
 				</c:if>
+				
+				<c:if test="${message.getTipo()==2}">
+					<b>${message.getNomeFamiliar() }</b>
+					<iframe width="560" height="315" src="${message.getMensagem()}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</c:if>
+				<br><br>
 			</c:forEach>
 		</div>
 	</div>

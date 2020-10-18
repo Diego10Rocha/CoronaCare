@@ -86,7 +86,7 @@ inner join Paciente on Paciente_Has_Familiar.id_Paciente = Paciente.id_Paciente;
 
 drop view if exists vMensagemPaciente;
 create view vMensagemPaciente as
-select Mensagem.id_Mensagem, Mensagem.mensagem, Mensagem.tipo, Mensagem.id_Paciente, Mensagem.id_Familiar 
+select Mensagem.id_Mensagem, Mensagem.mensagem, Mensagem.tipo, Mensagem.id_Paciente, Mensagem.id_Familiar, Familiar.nomeFamiliar
 from Familiar inner join Mensagem on Familiar.id_Familiar = Mensagem.id_Familiar
 inner join Paciente on Mensagem.id_Paciente = Paciente.id_Paciente;
 

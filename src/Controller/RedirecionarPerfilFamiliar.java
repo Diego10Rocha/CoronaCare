@@ -22,9 +22,9 @@ public class RedirecionarPerfilFamiliar extends HttpServlet {
  protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	 HttpSession session=request.getSession();
-	 if(session.getAttribute("emailUsuario") == null){
+	 if(session.getAttribute("emailFamiliar") == null){
 		response.sendRedirect("RedirecionarLoginFamiliar");
-	}else if(session.getAttribute("emailUsuario")!=null){
+	}else if(session.getAttribute("emailFamiliar")!=null){
 		
 		Familiar familiar = new Familiar();
 		int id_Familiar = (int) session.getAttribute("IdFamiliar");

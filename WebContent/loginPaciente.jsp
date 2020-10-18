@@ -11,6 +11,13 @@
 
 </head>
 <body>
+	<%
+		HttpSession newSession=request.getSession();
+
+		if(session.getAttribute("emailPaciente") != null){
+		response.sendRedirect("RedirecionarPerfilPaciente");
+		}
+	%>
 
 	<div id="header">
 		<a href="index.jsp"><img class="imagemtop" src="images/CoronaCare.png"  width="100%"></a>
