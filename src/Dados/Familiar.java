@@ -29,4 +29,8 @@ public class Familiar extends Usuario{
 		return FamiliarDAO.insertPaciente_has_Familiar(id_Familiar, id_Paciente);
 	}
 	
+	public boolean deletefamiliar(int id_Familiar){
+		return FamiliarDAO.deleteFamiliar(id_Familiar);
+	}
+	
 }

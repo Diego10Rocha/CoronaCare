@@ -37,6 +37,9 @@ p{
 }
 
 #form-add-patient-to-family{
+	position: absolute;
+	top: 5%;
+	left: 5%;
 	padding: center;
 	visibility: hidden;
 	border-top: 10%;

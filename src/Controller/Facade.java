@@ -75,4 +75,19 @@ public class Facade {
 		return m.getMensagens(id_Paciente);
 	}
 	
+	public static boolean deletePaciente(int id_Paciente){
+		Paciente paciente = new Paciente();
+		return paciente.deletePaciente(id_Paciente);
+	}
+	
+	public static boolean deletefamiliar(int id_Familiar){
+		Familiar familiar = new Familiar();
+		return familiar.deletefamiliar(id_Familiar);
+	}
+	
+	public static boolean deleteMensagem(int id_Mensagem){
+		Mensagem mensagem = new Mensagem();
+		return mensagem.deleteMensagem(id_Mensagem);
+	}
+	
 }

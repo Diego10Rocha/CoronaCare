@@ -39,5 +39,9 @@ public class Paciente extends Usuario{
 	public ArrayList<Paciente> getPacientes() throws SQLException{
 		return PacienteDAO.getPacientes();
 	}
+	
+	public boolean deletePaciente(int id_Paciente){
+		return PacienteDAO.deletePaciente(id_Paciente);
+	}
 
 }

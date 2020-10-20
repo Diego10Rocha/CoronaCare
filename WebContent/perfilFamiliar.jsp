@@ -34,6 +34,8 @@
 		<p class="menuItem-lateral"><a onClick="enableAddPatientToFamily();">Adicionar Paciente</a></p>
 	
 		<p class="menuItem-lateral"><a onClick="sendMessage();">Enviar mensagem</a></p>
+		
+		<p class="menuItem-lateral"><a href="ControleLogoutFamiliar">Fazer logout</a></p>
 	</div>
 	
 	<div id="body-perfil">

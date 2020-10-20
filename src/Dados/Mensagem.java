@@ -57,5 +57,9 @@ public class Mensagem {
 	public List <Mensagem> getMensagens(int id_Paciente) throws SQLException{
 		return MensagemDAO.getMensagens(id_Paciente);
 	}
+	
+	public boolean deleteMensagem(int id_Mensagem){
+		return MensagemDAO.deleteMensagem(id_Mensagem);
+	}
 
 }
