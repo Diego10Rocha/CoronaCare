@@ -63,8 +63,9 @@ a {
 }
 
 #see-message{
-	top: 20%;
-	display: flex;
+	margin-top: 5%;
+	border: 1px solid #828282;
+	display: block;
 	position: relative;
 	background-color: #ff8040;
 }

@@ -48,6 +48,9 @@ p{
 }
 
 #send-message{
+	position: absolute;
+	top: 5%;
+	left: 5%;
 	padding: center;
 	visibility: hidden;
 	border-top: 10%;

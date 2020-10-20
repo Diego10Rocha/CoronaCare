@@ -52,7 +52,11 @@
 		  </a>
 	</div>
 	
-	<div id="body">
+	<div id="menu-lateral">
+		<p class="menuItem-lateral"><a href="ControleLogoutPaciente">Fazer logout</a></p>
+	</div>
+	
+	<div id="body-perfil">
 		<div id="see-message">
 			<c:forEach items="${ListaMensagens}" var="message">
 				<label>Nome do familiar: </label>
