@@ -12,39 +12,6 @@ import Dados.Usuario;
 
 public class FamiliarDAO {
 	
-	public static Familiar getFamiliarById(int ID) throws SQLException {
-		Familiar f = null;
-		ResultSet rs;
-		PreparedStatement stmt;
-		
-		String sql = "select * from Familiar where id_Familiar = ?";
-		Connection con = Conexao.getConnection();
-		stmt = con.prepareStatement(sql);
-		stmt.setInt(1, ID);
-		
-		
-		rs = stmt.executeQuery();
-		try {
-			rs.next();
-			f = new Familiar();
-			f.setIdUsuario(rs.getInt("id_Familiar"));
-			f.setNomeUsuario(rs.getString("nomeFamiliar"));
-			f.setData_Nascimento(rs.getString("dataNascFamiliar"));
-			f.setTelefoneUsuario(rs.getString("telefoneFamiliar"));
-			f.setSenhaUsuario(rs.getString("senhaFamiliar"));
-			f.setEmailUsuario(rs.getString("emailFamiliar"));
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		rs.close();
-		stmt.close();
-		con.close();
-		
-		return f;
-	}
-	
 	public static ArrayList <Paciente> getPacientes(int Id) throws SQLException{
 		ArrayList <Paciente> pacientes = new ArrayList<Paciente> ();
 		Paciente p = null;
