@@ -77,7 +77,7 @@ public class PacienteDAO {
 		ResultSet rs;
 		PreparedStatement stmt;
 		
-		String sql = "select * from Paciente where id_Paciente = ?";
+		String sql = "select id_Paciente from paciente where nickname = ?";
 		Connection con = Conexao.getConnection();
 		stmt = con.prepareStatement(sql);
 		stmt.setInt(1, ID);
@@ -87,12 +87,13 @@ public class PacienteDAO {
 		try {
 			rs.next();
 			p = new Paciente();
+			System.out.println(rs.getInt("id_Paciente"));
 			p.setIdUsuario(rs.getInt("id_Paciente"));
 			p.setNomeUsuario(rs.getString("nomePaciente"));
 			p.setData_Nascimento(rs.getString("dataNascPaciente"));
 			p.setTelefoneUsuario(rs.getString("telefonePaciente"));
-			p.setSenhaUsuario(rs.getString("senhaPaciente"));
-			p.setEmailUsuario(rs.getString("emailPaciente"));
+			p.setTelefoneUsuario(rs.getString("senhaPaciente"));
+			p.setTelefoneUsuario(rs.getString("emailPaciente"));
 			p.setNickname(rs.getString("nickname"));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
