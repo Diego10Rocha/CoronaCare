@@ -11,7 +11,7 @@ public class Conexao {
 	private static Connection con = null;
 	//private static final String servidor = "db4free.net:3306";
 	private static final String servidor = "localhost";
-	private static final String basedados = "coronacare?useTimezone=true&serverTimezone=UTC&useSSL=false";
+	private static final String basedados = "coronacare";
 	//private static final String usuario = "coronacare";
 	private static final String usuario = "root";
 	//private static final String senha = "coronacare";
@@ -19,7 +19,7 @@ public class Conexao {
 	
 	public static Connection getConnection() throws SQLException{
 		try {
-			new com.mysql.cj.jdbc.Driver();
+			new com.mysql.jdbc.Driver();
 			con = DriverManager.getConnection("jdbc:mysql://"+ servidor + "/" + basedados, usuario, senha);
 			System.out.println("Conecatado!");
 			return con;

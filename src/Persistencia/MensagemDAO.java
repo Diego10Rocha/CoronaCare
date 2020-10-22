@@ -117,6 +117,7 @@ public class MensagemDAO {
 			stmt.executeUpdate();
 			con.close();
 			stmt.close();
+			System.out.println("Mensagem enviada!");
 			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

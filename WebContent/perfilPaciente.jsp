@@ -12,7 +12,7 @@
 	<script src="js/dynamic-profile.js" type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="css/buttons.css" >
 	<link rel="stylesheet" type="text/css" href="css/menu.css" >
-	<link rel="stylesheet" type="text/css" href="css/componente-perfill.css" >
+	<link rel="stylesheet" type="text/css" href="css/componente-perfil.css" >
 	<link rel="stylesheet" type="text/css" href="css/escopo.css" >
 	<link rel="shortcut icon" href="images/CoronaCare.png" type="image/x-icon"/>
 
@@ -31,26 +31,6 @@
 	<div id="header">
 		<img class="imagemtop" src="images/CoronaCare.png"  width="100%">
 		<p class="headerText"><a href="index.jsp">CoronaCare</a></p>
-	</div>
-	
-	<div id="headerPerfilP">
-		<p class="headerText">CoronaCare</p>
-		  <a href="index.jsp" style="color:black">
-		 	<button id="sairLogin">❌
-		 	</button> 
-		  </a>
-		  <a href="index.jsp" style="color:black">
-		 	<button id="excluirPaciente">🗑</button> 
-		  </a>
-		  <a href="index.jsp" style="color:black">
-		  	<button id="gerarResumo">🚫</button>
-		  </a>
-		  <a href="index.jsp" style="color:black">
-			<button id="verResumos">💾</button>  
-		  </a>
-		  <a href="index.jsp" style="color:black">
-		  	<button id="excluirConta">▶</button>
-		  </a>
 	</div>
 	
 	<div id="menu-lateral">

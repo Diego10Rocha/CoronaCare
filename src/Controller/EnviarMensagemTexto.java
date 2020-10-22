@@ -1,6 +1,5 @@
 package Controller;
 
-import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,6 +27,8 @@ public class EnviarMensagemTexto extends HttpServlet {
 					contador++;
 				if(!cond && mensagem.charAt(i) == '=')
 					cond = true;
+				if(mensagem.charAt(i+1) == '&')
+					break;
 				if(cond){
 					link += mensagem.charAt(i+1);
 				}
@@ -46,9 +47,8 @@ public class EnviarMensagemTexto extends HttpServlet {
 			}
 			mensagem = link;
 		}
-		
+		System.out.println(mensagem);
 		Facade.insertMensagem(mensagem, tipo, id_Familiar, id_Paciente);
-		mensagem = request.getParameter("mensagem");
 		
 		
 		response.sendRedirect("RedirecionarPerfilFamiliar");

@@ -47,8 +47,7 @@ public class Facade {
 	}
 	
 	public static int getPacienteByNickname(String nickname) throws SQLException{
-		Paciente paciente = new Paciente();
-		return paciente.getPacienteByNickname(nickname);
+		return Paciente.getPacienteByNickname(nickname);
 	}
 	
 	public static boolean AdicionarPacienteAFamiliar(int id_Familiar, int id_Paciente){
