@@ -12,6 +12,34 @@ import Dados.Usuario;
 
 public class FamiliarDAO {
 	
+	public static int getIdFamiliarByEmail(String email) throws SQLException {
+		int id_Familiar = 0;
+		ResultSet rs;
+		PreparedStatement stmt;
+		
+		String sql = "select id_Familiar from Familiar where emailFamiliar = ?";
+		Connection con = Conexao.getConnection();
+		stmt = con.prepareStatement(sql);
+		stmt.setString(1, email);
+		
+		
+		rs = stmt.executeQuery();
+		try {
+			rs.next();
+			id_Familiar = rs.getInt("id_Familiar");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		rs.close();
+		stmt.close();
+		con.close();
+		
+		return id_Familiar;
+		
+	}
+	
 	public static ArrayList <Paciente> getPacientes(int Id) throws SQLException{
 		ArrayList <Paciente> pacientes = new ArrayList<Paciente> ();
 		Paciente p = null;
@@ -85,7 +113,7 @@ public class FamiliarDAO {
 	public static boolean deleteFamiliar(int Id) {
 		PreparedStatement stmt;
 		Connection con;
-		String sql = "delete from Paciente where id_Familiar = ?";
+		String sql = "delete from Familiar where id_Familiar = ?";
 		try {
 			con = Conexao.getConnection();
 			stmt = con.prepareStatement(sql);
