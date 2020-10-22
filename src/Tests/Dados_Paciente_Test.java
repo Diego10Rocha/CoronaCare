@@ -52,4 +52,5 @@ class Dados_Paciente_Test {
 		boolean expected = PacienteDAO.deletePaciente(id);
 		assertTrue(expected);
 	}
+	
 }
