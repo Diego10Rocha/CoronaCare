@@ -33,4 +33,14 @@ public class Familiar extends Usuario{
 		return FamiliarDAO.deleteFamiliar(id_Familiar);
 	}
 	
+	public static int getIdFamiliarByEmail(String email){
+		try {
+			return FamiliarDAO.getFamiliarByEmail(email);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
 }

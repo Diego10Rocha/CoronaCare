@@ -12,7 +12,7 @@ import Dados.Usuario;
 
 public class FamiliarDAO {
 	
-	public static int getFamiliarByEmail(String nickname) throws SQLException {
+	public static int getFamiliarByEmail(String email) throws SQLException {
 		int id_Familiar = 0;
 		ResultSet rs;
 		PreparedStatement stmt;
@@ -20,7 +20,7 @@ public class FamiliarDAO {
 		String sql = "select id_Familiar from Familiar where emailFamiliar = ?";
 		Connection con = Conexao.getConnection();
 		stmt = con.prepareStatement(sql);
-		stmt.setString(1, nickname);
+		stmt.setString(1, email);
 		
 		
 		rs = stmt.executeQuery();
