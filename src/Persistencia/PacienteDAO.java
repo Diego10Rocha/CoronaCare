@@ -24,6 +24,7 @@ public class PacienteDAO {
 		
 		rs = stmt.executeQuery();
 		try {
+			rs.next();
 			id_Paciente = rs.getInt("id_Paciente");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -12,11 +12,12 @@
 	<script src="js/dynamic-profile.js" type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="css/buttons.css" >
 	<link rel="stylesheet" type="text/css" href="css/menu.css" >
-	<link rel="stylesheet" type="text/css" href="css/componente-perfil.css" >
+	<link rel="stylesheet" type="text/css" href="css/componente-perfill.css" >
 	<link rel="stylesheet" type="text/css" href="css/escopo.css" >
 	<link rel="shortcut icon" href="images/CoronaCare.png" type="image/x-icon"/>
 
 </head>
+
 <body>
 	<%
 		HttpSession newSession=request.getSession();
@@ -29,7 +30,7 @@
 
 	<div id="header">
 		<img class="imagemtop" src="images/CoronaCare.png"  width="100%">
-		<p class="headerText">CoronaCare</p>
+		<p class="headerText"><a href="index.jsp">CoronaCare</a></p>
 	</div>
 	
 	<div id="headerPerfilP">
@@ -57,19 +58,22 @@
 	</div>
 	
 	<div id="body-perfil">
-		<div id="see-message">
+		
 			<c:forEach items="${ListaMensagens}" var="message">
+				<div id="see-message">
 				<h1><b>${message.getNomeFamiliar() }</b></h1><br>
 				<c:if test="${message.getTipo()==1}">
-					<input type="text" readonly="readonly" value="${message.getMensagem() }">
+					<input type="text" readonly="readonly" value="${message.getMensagem() }"><br>
 				</c:if>
 				
 				<c:if test="${message.getTipo()==2}">
 					<iframe width="560" height="315" src="${message.getMensagem()}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</c:if>
-				<br><br>
+				<br>
+				</div>
 			</c:forEach>
-		</div>
+			<br>
+		
 	</div>
 	
 	<div id="footer">

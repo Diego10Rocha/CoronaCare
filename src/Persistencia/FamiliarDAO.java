@@ -12,6 +12,33 @@ import Dados.Usuario;
 
 public class FamiliarDAO {
 	
+	public static int getFamiliarByEmail(String nickname) throws SQLException {
+		int id_Familiar = 0;
+		ResultSet rs;
+		PreparedStatement stmt;
+		
+		String sql = "select id_Familiar from Familiar where emailFamiliar = ?";
+		Connection con = Conexao.getConnection();
+		stmt = con.prepareStatement(sql);
+		stmt.setString(1, nickname);
+		
+		
+		rs = stmt.executeQuery();
+		try {
+			rs.next();
+			id_Familiar = rs.getInt("id_Familiar");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		rs.close();
+		stmt.close();
+		con.close();
+		
+		return id_Familiar;
+	}
+	
 	public static Familiar getFamiliarById(int ID) throws SQLException {
 		Familiar f = null;
 		ResultSet rs;
