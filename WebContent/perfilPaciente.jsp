@@ -59,14 +59,12 @@
 	<div id="body-perfil">
 		<div id="see-message">
 			<c:forEach items="${ListaMensagens}" var="message">
-				<label>Nome do familiar: </label>
+				<h1><b>${message.getNomeFamiliar() }</b></h1><br>
 				<c:if test="${message.getTipo()==1}">
-					<b>${message.getNomeFamiliar() }</b>
 					<input type="text" readonly="readonly" value="${message.getMensagem() }">
 				</c:if>
 				
 				<c:if test="${message.getTipo()==2}">
-					<b>${message.getNomeFamiliar() }</b>
 					<iframe width="560" height="315" src="${message.getMensagem()}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</c:if>
 				<br><br>

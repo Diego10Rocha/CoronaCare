@@ -60,6 +60,7 @@ a {
 	background-color: #FF6347;
 	color: white;
 	visibility: visible;
+	overflow: auto;
 }
 
 #see-message{
