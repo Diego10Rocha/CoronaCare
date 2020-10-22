@@ -1,5 +1,6 @@
 package Controller;
 
+import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -45,6 +46,7 @@ public class EnviarMensagemTexto extends HttpServlet {
 			}
 			mensagem = link;
 		}
+		
 		Facade.insertMensagem(mensagem, tipo, id_Familiar, id_Paciente);
 		mensagem = request.getParameter("mensagem");
 		
