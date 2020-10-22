@@ -145,7 +145,7 @@ public class FamiliarDAO {
 	public static boolean deleteFamiliar(int Id) {
 		PreparedStatement stmt;
 		Connection con;
-		String sql = "delete from Paciente where id_Familiar = ?";
+		String sql = "delete from Familiar where id_Familiar = ?";
 		try {
 			con = Conexao.getConnection();
 			stmt = con.prepareStatement(sql);
@@ -229,5 +229,6 @@ public class FamiliarDAO {
 			return false;
 		}
 	}
-
+	
+	
 }
