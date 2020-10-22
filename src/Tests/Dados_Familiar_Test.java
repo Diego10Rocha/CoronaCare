@@ -13,7 +13,6 @@ import Dados.Familiar;
 import Persistencia.FamiliarDAO;
 
 
-
 @TestMethodOrder(OrderAnnotation.class)
 class Dados_Familiar_Test {
 
