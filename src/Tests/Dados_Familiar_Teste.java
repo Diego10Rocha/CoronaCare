@@ -4,36 +4,31 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.sql.SQLException;
 
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 
 import Dados.Familiar;
+import Dados.Paciente;
 import Persistencia.FamiliarDAO;
+import Persistencia.PacienteDAO;
 
-
-@TestMethodOrder(OrderAnnotation.class)
 class Dados_Familiar_Test {
 
 	@Test
-	@Order(1)
 	void cadastrarTest() {
 		Familiar f = new Familiar();
-		f.setNomeUsuario("TESTE10");
+		f.setNomeUsuario("Teste");
 		f.setData_Nascimento("2020-02-01");
-		f.setSenhaUsuario("123");
-		f.setEmailUsuario("TESTE10@teste.com");
+		f.setSenhaUsuario("12322");
+		f.setEmailUsuario("teste@teste.com");
 		f.setTelefoneUsuario("122345678900");
 		boolean expected = f.cadastrar(f);
 		assertTrue(expected);
 	}
 
 	@Test
-	@Order(2)
 	void loginTeste() throws SQLException {
 		boolean expected;
-		Familiar paciente = FamiliarDAO.loginFamiliar("TESTE10@teste.com", "123");
+		Familiar paciente = FamiliarDAO.loginFamiliar("teste@teste.com", "122345678900");
 		if (paciente instanceof Familiar) {
 			expected = true;
 		}else {
@@ -43,9 +38,8 @@ class Dados_Familiar_Test {
 	}
 	
 	@Test
-	@Order(3)
 	void deletarTest() throws SQLException {
-		int id = Familiar.getIdFamiliarByEmail("TESTE10@teste.com");
+		int id = Familiar.getIdFamiliarByUserName("Teste");
 		boolean expected = FamiliarDAO.deleteFamiliar(id);
 		assertTrue(expected);
 	}

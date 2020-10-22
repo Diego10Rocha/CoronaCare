@@ -32,9 +32,5 @@ public class Familiar extends Usuario{
 	public boolean deletefamiliar(int id_Familiar){
 		return FamiliarDAO.deleteFamiliar(id_Familiar);
 	}
-
-	public static int getIdFamiliarByEmail(String email) throws SQLException {
-		return FamiliarDAO.getIdFamiliarByEmail(email);
-	}
 	
 }

@@ -32,7 +32,7 @@ public class Paciente extends Usuario{
 		
 	}
 	
-	public static int getPacienteByNickname(String nickname) throws SQLException{
+	public int getPacienteByNickname(String nickname) throws SQLException{
 		return PacienteDAO.getPacienteByNickname(nickname);
 	}
 	
