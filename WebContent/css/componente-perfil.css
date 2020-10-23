@@ -1,5 +1,7 @@
 @CHARSET "utf-8";
-
+body{
+	background-color: #FF6347;
+}
 #center {
 	position: absolute;
 	top: 20%;
@@ -14,9 +16,8 @@
 
 #menu-lateral {
 	position: absolute;
-	top: 15%;
-	left: 0px;
-	background-color: #000005;
+	margin-left:1100px;
+	margin-top:-25px;
 	width: 20%;
 	height: 100%;
 }
@@ -36,13 +37,21 @@ a {
 	color: black;
 }
 
-.menuItem-lateral {
-	margin: 5px;
-	padding: 10px;
-	text-align: center;
-	border-radius: 20px 0px 20px 0px;
-	/* Canto superior esq, sup dir, inf dir inf esq */
-	background-color: gray;
+.menuItem-lateral-add{
+	margin-top:40px;
+	font-size:40px;
+}
+.menuItem-lateral-enviar{
+	margin-left:70px;
+	margin-top:-90px;
+	float:left;
+	font-size:40px;
+}
+.menuItem-lateral-sair {
+	margin-left:150px;
+	margin-top:-90px;
+	font-size:40px;
+	float:left;
 }
 
 .menuItem-lateral:hover {
@@ -56,8 +65,7 @@ a {
 	top: 15%;
 	left: 20%;
 	height: 100%;
-	width: 80%;
-	background-color: #FF6347;
+	width: 100%;
 	color: white;
 	visibility: visible;
 	overflow: auto;

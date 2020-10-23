@@ -42,7 +42,7 @@
 #formcadastro{
 	position:relative;
 	margin-top:-30px;
-	margin-left:300px;
+	margin-left:530px;
 	text-align:left;
 	font-size: 25pt;
 }
@@ -72,6 +72,7 @@
 	text-align:center;
 	font-weight:bold;
 	FONT-SIZE: 35pt;
+	margin-top:25px;
 }
 
 

@@ -7,7 +7,8 @@
 }
 
 .inputs{
-	margin-left:500px;
+	margin-left:-20px;
+	margin-top:20px;
 }
 .bnt-entrar{
 	border:1px solid; padding: 11px 21px;
