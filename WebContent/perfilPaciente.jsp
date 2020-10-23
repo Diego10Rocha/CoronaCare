@@ -43,7 +43,7 @@
 				<div id="see-message">
 				<h1><b>${message.getNomeFamiliar() }</b></h1><br>
 				<c:if test="${message.getTipo()==1}">
-					<input type="text" readonly="readonly" value="${message.getMensagem() }"><br>
+					<h1>${message.getMensagem() }"</h1><br>
 				</c:if>
 				
 				<c:if test="${message.getTipo()==2}">

@@ -13,6 +13,7 @@ public class RealizarCadastroFamiliar extends HttpServlet {
        
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
 		String nome, email, data, senha, telefone;
 		nome = request.getParameter("nome");
 		email = request.getParameter("emailUsuario");

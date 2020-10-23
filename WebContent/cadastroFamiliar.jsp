@@ -30,7 +30,7 @@
 				<label>Data de Nascimento:</label>
 				<input type="date" required="required" value="" name="datanascimento"><br><br>
 				<label>Telefone:</label>
-				<input type="text" required="required" id="telefone" name="telefone" placeholder="Telefone" maxlength="15"/><br><br>
+				<input type="text" required="required" id="telefone" name="telefoneUsuario" placeholder="Telefone" maxlength="15"/><br><br>
 				<label>Email:</label>
 				<input type="email" required="required" name="emailUsuario" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
 				<label>Confirmar email:</label>

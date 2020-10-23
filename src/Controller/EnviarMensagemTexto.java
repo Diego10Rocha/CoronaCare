@@ -13,6 +13,7 @@ public class EnviarMensagemTexto extends HttpServlet {
        
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
 		int id_Paciente = 0, id_Familiar, tipo;
 		String mensagem = null, link="https://www.youtube.com/embed/";
 		id_Familiar = Integer.parseInt(request.getParameter("id_Familiar"));

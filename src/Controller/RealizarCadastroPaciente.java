@@ -16,6 +16,7 @@ public class RealizarCadastroPaciente extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
 		String nome, email, data, nickname, senha, telefone;
 		nome = request.getParameter("nome");
 		email = request.getParameter("emailUsuario");
