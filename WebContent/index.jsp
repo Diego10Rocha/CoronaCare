@@ -37,6 +37,6 @@
 		<div id="footer">
 			Para qualquer erro contate (11) 4002-8922 ou (75) 982155429
 		</div>
-	</body>
 
+	</body>
 </html>
