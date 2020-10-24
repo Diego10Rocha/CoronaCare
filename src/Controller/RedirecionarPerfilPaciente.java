@@ -17,27 +17,28 @@ import Dados.Mensagem;
 @WebServlet("/RedirecionarPerfilPaciente")
 public class RedirecionarPerfilPaciente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
- protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	 HttpSession session=request.getSession();
-	 if(session.getAttribute("emailPaciente") == null){
-		response.sendRedirect("RedirecionarLoginPaciente");
-	}else if(session.getAttribute("emailPaciente")!=null){
-		int id_Paciente = (int) session.getAttribute("IdPaciente");
-		List <Mensagem> messages = null;
-		try {
-			messages = Facade.getMensagens(id_Paciente);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		HttpSession session = request.getSession();
+		if (session.getAttribute("emailPaciente") == null) {
+			response.sendRedirect("RedirecionarLoginPaciente");
+		} else if (session.getAttribute("emailPaciente") != null) {
+			int id_Paciente = (int) session.getAttribute("IdPaciente");
+			List<Mensagem> messages = null;
+			try {
+				messages = Facade.getMensagens(id_Paciente);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			request.setAttribute("ListaMensagens", messages);
+			RequestDispatcher view = request.getRequestDispatcher("perfilPaciente.jsp");
+			view.forward(request, response);
+
 		}
-		request.setAttribute("ListaMensagens", messages);
-		RequestDispatcher view = request.getRequestDispatcher("perfilPaciente.jsp");
-		view.forward(request, response);
-		
-	}
-	 
+
 	}
 
 }
