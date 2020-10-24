@@ -53,8 +53,9 @@
 			</div>
 		</div>
 
-		<div id="footer">Para qualquer erro contate: (xx)9xxxx-xxxx</div>
+		<div id="footer">
+			Para qualquer erro contate: (xx)9xxxx-xxxx
+		</div>
 
 	</body>
-
 </html>

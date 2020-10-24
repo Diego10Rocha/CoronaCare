@@ -51,7 +51,9 @@
 			</div>
 		</div>
 
-		<div id="footer">Para qualquer erro contate (11) 4002-8922</div>
+		<div id="footer">
+			Para qualquer erro contate (11) 4002-8922
+		</div>
 
 	</body>
 </html>
