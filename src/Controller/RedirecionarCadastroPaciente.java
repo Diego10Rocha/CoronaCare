@@ -10,8 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/RedirecionarCadastroPaciente")
 public class RedirecionarCadastroPaciente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		response.sendRedirect("cadastroPaciente.jsp");
 	}
 
