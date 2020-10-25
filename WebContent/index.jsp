@@ -33,9 +33,9 @@
 				</p>
 			</div>
 		</div>
-		<!--<iframe width="853" height="480" src="https://www.youtube.com/embed/OpM2T2QYeX4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+		
 	</div>
 
-	<div id="footer">Para qualquer erro contate (11) 4002-8922 ou (75) 982155429</div>
+	<div id="footer">Para qualquer erro contate (75) 98331-1017 ou (75) 982155429</div>
 </body>
 </html>

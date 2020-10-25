@@ -14,8 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="css/menu.css" >
 	<link rel="stylesheet" type="text/css" href="css/componente-perfil.css" >
 	<link rel="stylesheet" type="text/css" href="css/escopo.css" >
-	<link rel="shortcut icon" href="images/CoronaCare.png" type="image/x-icon"/>
-
+	
 </head>
 
 <body>
@@ -31,34 +30,28 @@
 	<div id="header">
 		<img class="imagemtop" src="images/CoronaCare.png"  width="100%">
 		<p class="headerText"><a href="index.jsp">CoronaCare</a></p>
-	</div>
-	
-	<div id="menu-lateral">
-		<p class="menuItem-lateral"><a href="ControleLogoutPaciente">Fazer logout</a></p>
+		<a href="ControleLogoutPaciente"><img class="imagemlogout" src="images/logout.png"  width="10%"></a>
 	</div>
 	
 	<div id="body-perfil">
 		
 			<c:forEach items="${ListaMensagens}" var="message">
-				<div id="see-message">
-				<h1><b>${message.getNomeFamiliar() }</b></h1><br>
-				<c:if test="${message.getTipo()==1}">
-					<h1>${message.getMensagem() }"</h1><br>
-				</c:if>
-				
-				<c:if test="${message.getTipo()==2}">
-					<iframe width="560" height="315" src="${message.getMensagem()}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</c:if>
-				<br>
+				<div id="listView">
+					<h1><b>${message.getNomeFamiliar() }</b></h1><br>
+					<c:if test="${message.getTipo()==1}">
+						<h1>${message.getMensagem() }"</h1><br>
+					</c:if>
+					
+					<c:if test="${message.getTipo()==2}">
+						<iframe width="560" height="315" src="${message.getMensagem()}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</c:if>
+					<br>
 				</div>
 			</c:forEach>
 			<br>
 		
 	</div>
 	
-	<div id="footer">
-	
-	</div>
 
 </body>
 </html>

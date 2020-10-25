@@ -44,6 +44,7 @@ p{
 	visibility: hidden;
 	border-top: 10%;
 	border-left: 15px;
+	font-size: 20px;
 	
 }
 
@@ -54,5 +55,5 @@ p{
 	padding: center;
 	visibility: hidden;
 	border-top: 10%;
-	
+	font-size: 20px;
 }

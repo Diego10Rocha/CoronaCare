@@ -35,7 +35,7 @@ foreign key(id_Familiar) references Familiar(id_Familiar)
 drop table if exists Mensagem;
 create table Mensagem(
 id_Mensagem int unsigned not null auto_increment primary key,
-mensagem varchar(1000) not null,
+mensagem varchar(10000) not null,
 tipo int(1) not null,
 id_Familiar int unsigned not null,
 id_Paciente int unsigned not null,
