@@ -2,7 +2,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!doctype html>
-<html>
+<html lang="pt-br">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>CoronaCare: Cadastro</title>
@@ -59,13 +59,13 @@
 				</div>
 				
 			</form>
-		</div>
-		
-	</div>
-	
-	<div id="footer">
-	Para qualquer erro contate: (xx)9xxxx-xxxx
-	</div>
 
-</body>
+			</div>
+		</div>
+
+		<div id="footer">
+			Para qualquer erro contate: (75)98331-1017
+		</div>
+
+	</body>
 </html>

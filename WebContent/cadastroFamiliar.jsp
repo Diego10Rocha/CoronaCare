@@ -3,6 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html lang="pt-br">
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>CoronaCare: Cadastro</title>
@@ -57,12 +58,12 @@
 				</div>
 				
 			</form>
+	</div>
 		</div>
-		
-	</div>
-	
-	<div id="footer">
-		Para qualquer erro contate (11) 4002-8922
-	</div>
-</body>
+
+		<div id="footer">
+			Para qualquer erro contate (11) 4002-8922
+		</div>
+
+	</body>
 </html>

@@ -1,11 +1,12 @@
 @CHARSET "utf-8";
-body{
+body {
 	background-color: #FF6347;
 	
 }
 h3{
 	display: inline;
 }
+
 #center {
 	position: absolute;
 	top: 20%;
@@ -22,7 +23,7 @@ h3{
 	position: absolute;
 	margin-left:80%;
 	margin-top:-25px;
-	width:15%;
+	width: 20%;
 	height: 100%;
 }
 
@@ -41,21 +42,23 @@ a {
 	color: black;
 }
 
-.menuItem-lateral-add{
-	margin-top:40px;
-	font-size:40px;
+.menuItem-lateral-add {
+	margin-top: 40px;
+	font-size: 40px;
 }
-.menuItem-lateral-enviar{
-	margin-left:70px;
-	margin-top:-90px;
-	float:left;
-	font-size:40px;
+
+.menuItem-lateral-enviar {
+	margin-left: 70px;
+	margin-top: -90px;
+	float: left;
+	font-size: 40px;
 }
+
 .menuItem-lateral-sair {
-	margin-left:150px;
-	margin-top:-90px;
-	font-size:40px;
-	float:left;
+	margin-left: 150px;
+	margin-top: -90px;
+	font-size: 40px;
+	float: left;
 }
 
 .menuItem-lateral:hover {
@@ -64,7 +67,7 @@ a {
 	color: black;
 }
 
-#body-perfil{
+#body-perfil {
 	position: absolute;
 	top: 15%;
 	left: 0%;
@@ -73,6 +76,7 @@ a {
 	color: white;
 	visibility: visible;
 }
+
 
 #listView{
 	margin: 3%;

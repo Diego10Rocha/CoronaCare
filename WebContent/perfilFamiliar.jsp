@@ -4,6 +4,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!doctype html>
 <html lang="pt-br">
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta charset="utf-8">
@@ -42,7 +43,7 @@
 		<p class="headerText">
 			<a href="index.jsp">CoronaCare</a>
 		</p>
-		<a href="ControleLogoutPaciente"><img class="imagemlogout"
+		<a href="ControleLogoutFamiliar"><img class="imagemlogout"
 			src="images/logout.png" width="10%"></a>
 	</div>
 
@@ -69,6 +70,8 @@
 			</form>
 
 		</div>
+
+
 
 		<div id="listView">
 			<form action="EnviarMensagemTexto" method="post">
@@ -110,18 +113,16 @@
 				</select><br> <br>
 				<h3>
 					<label>Video do YouTube:</label>
-				</h3>
+				</h3><br>
 				<input type="text" style="width: 30%;"
 					placeholder="Insira aqui o link do video do YouTube"
-					name="mensagem" maxlength="1000" required="required"><br>
+					name="mensagem" maxlength="1000" required="required"><br><br>
 				<input type="hidden" name="id_Familiar" value="${IdFamiliar}">
 				<input type="hidden" name="tipo" value="2">
 				<Button class="bnt-cadastrar" type="submit">Enviar</Button>
 			</form>
-
 		</div>
 	</div>
-
 
 </body>
 </html>

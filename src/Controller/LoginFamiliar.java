@@ -15,22 +15,23 @@ import Dados.Familiar;
 public class LoginFamiliar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String email, senha;
 		email = request.getParameter("email");
 		senha = request.getParameter("password");
 		System.out.println(email + senha);
 		Familiar familiar = Facade.loginFamiliar(email, senha);
-		if(familiar != null){
+		if (familiar != null) {
 			HttpSession session = request.getSession();
-			
+
 			session.setAttribute("IdFamiliar", familiar.getIdUsuario());
 			session.setAttribute("nomeFamiliar", familiar.getNomeUsuario());
 			session.setAttribute("emailFamiliar", familiar.getEmailUsuario());
 			session.setMaxInactiveInterval(2000);
 			response.sendRedirect("RedirecionarPerfilFamiliar");
-		}else
+		} else
 			response.sendRedirect("RedirecionarLoginFamiliar");
 	}
 

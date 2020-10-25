@@ -5,17 +5,18 @@ import java.util.ArrayList;
 
 import Persistencia.PacienteDAO;
 
-public class Paciente extends Usuario{
-	
+public class Paciente extends Usuario {
+
 	private String Nickname;
-	
+
 	public String getNickname() {
 		return Nickname;
 	}
+
 	public void setNickname(String nickname) {
 		Nickname = nickname;
 	}
-	
+
 	@Override
 	public Usuario login(String email, String senha) {
 		try {
@@ -26,25 +27,26 @@ public class Paciente extends Usuario{
 		}
 		return null;
 	}
+
 	@Override
 	public boolean cadastrar(Usuario user) {
-		return PacienteDAO.insertPaciente((Paciente)user);
-		
+		return PacienteDAO.insertPaciente((Paciente) user);
+
 	}
-	
-	public static int getPacienteByNickname(String nickname) throws SQLException{
+
+	public static int getPacienteByNickname(String nickname) throws SQLException {
 		return PacienteDAO.getPacienteByNickname(nickname);
 	}
-	
-	public ArrayList<Paciente> getPacientes() throws SQLException{
+
+	public ArrayList<Paciente> getPacientes() throws SQLException {
 		return PacienteDAO.getPacientes();
 	}
-	
-	public boolean deletePaciente(int id_Paciente){
+
+	public boolean deletePaciente(int id_Paciente) {
 		return PacienteDAO.deletePaciente(id_Paciente);
 	}
-	
-	public static int getIdPacienteByEmail(String email) throws SQLException{
+
+	public static int getIdPacienteByEmail(String email) throws SQLException {
 		return PacienteDAO.getPacienteByEmail(email);
 	}
 
