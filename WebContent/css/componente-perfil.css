@@ -1,11 +1,12 @@
 @CHARSET "utf-8";
-body{
+body {
 	background-color: #FF6347;
 	
 }
 h3{
 	display: inline;
 }
+
 #center {
 	position: absolute;
 	top: 20%;
@@ -20,9 +21,15 @@ h3{
 
 #menu-lateral {
 	position: absolute;
+<<<<<<< HEAD
 	margin-left:80%;
 	margin-top:-25px;
 	width:15%;
+=======
+	margin-left: 1100px;
+	margin-top: -25px;
+	width: 20%;
+>>>>>>> 35513721611dcae986f4c04fed75ca55ea00a275
 	height: 100%;
 }
 
@@ -41,21 +48,23 @@ a {
 	color: black;
 }
 
-.menuItem-lateral-add{
-	margin-top:40px;
-	font-size:40px;
+.menuItem-lateral-add {
+	margin-top: 40px;
+	font-size: 40px;
 }
-.menuItem-lateral-enviar{
-	margin-left:70px;
-	margin-top:-90px;
-	float:left;
-	font-size:40px;
+
+.menuItem-lateral-enviar {
+	margin-left: 70px;
+	margin-top: -90px;
+	float: left;
+	font-size: 40px;
 }
+
 .menuItem-lateral-sair {
-	margin-left:150px;
-	margin-top:-90px;
-	font-size:40px;
-	float:left;
+	margin-left: 150px;
+	margin-top: -90px;
+	font-size: 40px;
+	float: left;
 }
 
 .menuItem-lateral:hover {
@@ -64,7 +73,7 @@ a {
 	color: black;
 }
 
-#body-perfil{
+#body-perfil {
 	position: absolute;
 	top: 15%;
 	left: 0%;
@@ -74,7 +83,11 @@ a {
 	visibility: visible;
 }
 
+<<<<<<< HEAD
 #listView{
+=======
+#see-message {
+>>>>>>> 35513721611dcae986f4c04fed75ca55ea00a275
 	margin: 3%;
 	border: 1px solid #828282;
 	display: block;

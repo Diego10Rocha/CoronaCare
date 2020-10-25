@@ -13,8 +13,9 @@ import Dados.Paciente;
 @WebServlet("/LoginPaciente")
 public class LoginPaciente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
 		String email, senha;
@@ -22,15 +23,15 @@ public class LoginPaciente extends HttpServlet {
 		senha = request.getParameter("password");
 		System.out.println(email + senha);
 		Paciente paciente = Facade.loginPaciente(email, senha);
-		if(paciente != null){
+		if (paciente != null) {
 			HttpSession session = request.getSession();
-			
+
 			session.setAttribute("IdPaciente", paciente.getIdUsuario());
 			session.setAttribute("nomePaciente", paciente.getNomeUsuario());
 			session.setAttribute("emailPaciente", paciente.getEmailUsuario());
 			session.setMaxInactiveInterval(2000);
 			response.sendRedirect("RedirecionarPerfilPaciente");
-		}else
+		} else
 			response.sendRedirect("loginPaciente.jsp");
 	}
 

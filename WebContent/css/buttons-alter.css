@@ -1,57 +1,59 @@
-.title{
+.title {
 	text-decoration: none;
 	cursor: pointer;
 	color: white;
-	font-weight:bold;
+	font-weight: bold;
 	font-family: "arial";
 }
 
-.inputs{
-	margin-left:-20px;
-	margin-top:20px;
-}
-.bnt-entrar{
-	border:1px solid; padding: 11px 21px;
-	vertical-align: middle; 
-	background:#2D888F; 
-	color:white;
-	border-radius:6px; 
-	font-size: 20px; 
-	font-family:helvetica, serif;
-	transition: border-color 0.2s;
-	text-decoration:none;
-	float:left;
-	margin-left:15px;
-	cursor: pointer;
+.inputs {
+	margin-left: -20px;
+	margin-top: 20px;
 }
 
-.bnt-cadastrar{
-	border:1px solid;
+.bnt-entrar {
+	border: 1px solid;
 	padding: 11px 21px;
-	vertical-align: middle; 
-	background:#FF6347; 
-	color:white;
-	border-radius:6px; 
+	vertical-align: middle;
+	background: #2D888F;
+	color: white;
+	border-radius: 6px;
+	font-size: 20px;
+	font-family: helvetica, serif;
 	transition: border-color 0.2s;
-	font-size: 20px; 
-	font-family:helvetica, serif;
-	text-decoration:none;
-	margin-left:100px;
-	float:left;
+	text-decoration: none;
+	float: left;
+	margin-left: 15px;
 	cursor: pointer;
 }
 
-.enviar{
-	margin-left:500px;
+.bnt-cadastrar {
+	border: 1px solid;
+	padding: 11px 21px;
+	vertical-align: middle;
+	background: #FF6347;
+	color: white;
+	border-radius: 6px;
+	transition: border-color 0.2s;
+	font-size: 20px;
+	font-family: helvetica, serif;
+	text-decoration: none;
+	margin-left: 100px;
+	float: left;
+	cursor: pointer;
 }
 
-#input-email{
-	border-radius:3px;
-	margin-left:10px;
-	height:20px;
+.enviar {
+	margin-left: 500px;
 }
 
-#input-senha{
-	border-radius:3px;
-	height:20px;
+#input-email {
+	border-radius: 3px;
+	margin-left: 10px;
+	height: 20px;
+}
+
+#input-senha {
+	border-radius: 3px;
+	height: 20px;
 }

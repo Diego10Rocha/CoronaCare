@@ -1,6 +1,5 @@
 @CHARSET "utf-8";
-
-#formLogin{
+#formLogin {
 	position: absolute;
 	top: 10%;
 	left: 30%;
@@ -12,7 +11,8 @@
 	margin-left: auto;
 	border-width: 2px;
 }
-.form-control{
+
+.form-control {
 	display: block;
 	width: 100%;
 	height: calc(2.25rem + 2px);
@@ -25,18 +25,17 @@
 	border: 1px solid #ced4da;
 	border-radius: .25rem;
 	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
-	
 }
 
 .form-control:hover {
-		transition: border-color 0.2s;
+	transition: border-color 0.2s;
 }
 
-p{
-	font-size:20;
+p {
+	font-size: 20;
 }
 
-#form-add-patient-to-family{
+#form-add-patient-to-family {
 	position: absolute;
 	top: 5%;
 	left: 5%;
@@ -44,16 +43,22 @@ p{
 	visibility: hidden;
 	border-top: 10%;
 	border-left: 15px;
+<<<<<<< HEAD
 	font-size: 20px;
 	
+=======
+>>>>>>> 35513721611dcae986f4c04fed75ca55ea00a275
 }
 
-#send-message{
+#send-message {
 	position: absolute;
 	top: 5%;
 	left: 5%;
 	padding: center;
 	visibility: hidden;
 	border-top: 10%;
+<<<<<<< HEAD
 	font-size: 20px;
+=======
+>>>>>>> 35513721611dcae986f4c04fed75ca55ea00a275
 }

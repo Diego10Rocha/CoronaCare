@@ -1,13 +1,14 @@
 @CHARSET "ISO-8859-1";
-a{
+a {
 	text-decoration: none;
 	cursor: pointer;
 	color: white;
-	font-weight:bold;
+	font-weight: bold;
 	font-family: "arial";
 }
-.menuItem{
-	margin:10%;
+
+.menuItem {
+	margin: 10%;
 	padding: 10px;
 	text-align: center;
 	border-radius: 10px 10px 10px 10px;
@@ -16,19 +17,20 @@ a{
 	font-family: "arial";
 	opacity: 0.85;
 }
-.menuItem:hover{
+
+.menuItem:hover {
 	color: white;
 	FONT-SIZE: 30;
 	opacity: 1;
 }
-		
-#paciente{
+
+#paciente {
 	position: absolute;
 	left: 0%;
 	width: 50%;
 }
 
-#familiar{
+#familiar {
 	position: absolute;
 	left: 50%;
 	width: 50%
