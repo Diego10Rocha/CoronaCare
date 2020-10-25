@@ -1,9 +1,10 @@
 @CHARSET "ISO-8859-1";
-body{
+
+body {
 	background-color: #FF6347;
-	
 }
-#header{
+
+#header {
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -13,8 +14,7 @@ body{
 	font-size: 40;
 }
 
-
-#body{
+#body {
 	position: absolute;
 	top: 15%;
 	left: 0%;
@@ -22,75 +22,74 @@ body{
 	width: 100%;
 }
 
-#menu{
+#menu {
 	position: absolute;
-	top:20%;
-	left:25%;
-	height:20%;
+	top: 20%;
+	left: 25%;
+	height: 20%;
 	background-color: silver;
-	width:45%;
-	opacity:0.9;
+	width: 45%;
+	opacity: 0.9;
 	border-radius: 50px 50px 50px 50px;
-	text-align:center;
-}		
-		
-#formEntrar{
-	position:relative;
-	margin-top:15px;
-	margin-left:530px;
-	text-align:left;
+	text-align: center;
+}
+
+#formEntrar {
+	position: relative;
+	margin-top: 15px;
+	margin-left: 530px;
+	text-align: left;
 	font-size: 25pt;
 }
 
-#formcadastro{
-	position:relative;
-	margin-top:-30px;
-	margin-left:530px;
-	text-align:left;
+#formcadastro {
+	position: relative;
+	margin-top: -30px;
+	margin-left: 30%;
+	text-align: left;
 	font-size: 25pt;
 }
 
-.cor{
+.cor {
 	color: black;
-	font-family:"arial";
+	font-family: "arial";
 	font-size: 30;
-	margin:0px;
+	margin: 0px;
 }
-	
-#footer{
-	position:absolute;
-	top:100%;
+
+#footer {
 	position: absolute;
-	top:110%;
-	left:0%;
-	height:10%;
+	top: 100%;
+	position: absolute;
+	top: 110%;
+	left: 0%;
+	height: 10%;
 	background-color: silver;
-	width:100%;
-	text-align:center;
+	width: 100%;
+	text-align: center;
 }
 
 .headerText {
 	color: white;
-	font-family:"ar blanca";
-	text-align:center;
-	font-weight:bold;
+	font-family: "ar blanca";
+	text-align: center;
+	font-weight: bold;
 	FONT-SIZE: 35pt;
-	margin-top:25px;
+	margin-top: 25px;
 }
 
-
-.imagemtop{
+.imagemtop {
 	position: absolute;
 	top: 1%;
-	left:1%;
+	left: 1%;
 	height: 98%;
 	width: 13%;
 }
 
-.imagemlogout{
+.imagemlogout {
 	position: absolute;
 	top: 50%;
-	left:95%;
+	left: 95%;
 	height: 40%;
 	width: 3%;
 }

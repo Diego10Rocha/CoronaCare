@@ -43,5 +43,9 @@ public class Paciente extends Usuario{
 	public boolean deletePaciente(int id_Paciente){
 		return PacienteDAO.deletePaciente(id_Paciente);
 	}
+	
+	public static int getIdPacienteByEmail(String email) throws SQLException{
+		return PacienteDAO.getPacienteByEmail(email);
+	}
 
 }

@@ -11,6 +11,33 @@ import Dados.Paciente;
 
 public class PacienteDAO {
 	
+	public static int getPacienteByEmail(String email) throws SQLException {
+		int id_Paciente = 0;
+		ResultSet rs;
+		PreparedStatement stmt;
+		
+		String sql = "select id_Paciente from Paciente where emailPaciente = ?";
+		Connection con = Conexao.getConnection();
+		stmt = con.prepareStatement(sql);
+		stmt.setString(1, email);
+		
+		
+		rs = stmt.executeQuery();
+		try {
+			rs.next();
+			id_Paciente = rs.getInt("id_Paciente");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		rs.close();
+		stmt.close();
+		con.close();
+		
+		return id_Paciente;
+	}
+	
 	public static int getPacienteByNickname(String nickname) throws SQLException {
 		int id_Paciente = 0;
 		ResultSet rs;

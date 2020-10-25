@@ -15,11 +15,19 @@ public class EnviarMensagemTexto extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
 		int id_Paciente = 0, id_Familiar, tipo;
-		String mensagem = null, link="https://www.youtube.com/embed/";
+		String mensagem = null, link="https://www.youtube.com/embed/", aux = "";
 		id_Familiar = Integer.parseInt(request.getParameter("id_Familiar"));
 		id_Paciente = Integer.parseInt(request.getParameter("id_Paciente"));
 		mensagem = request.getParameter("mensagem");
 		tipo = Integer.parseInt(request.getParameter("tipo"));
+		if(tipo == 1){
+			for(int i=0;i<mensagem.length()-1;i++){
+				aux+=mensagem.charAt(i);
+				if(mensagem.charAt(i+1) == '\n')
+					aux += "<br>";
+			}
+			mensagem = aux;
+		}
 		if(tipo == 2){
 			boolean cond = false;
 			int contador = 0;

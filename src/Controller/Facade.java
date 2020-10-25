@@ -89,4 +89,12 @@ public class Facade {
 		return mensagem.deleteMensagem(id_Mensagem);
 	}
 	
+	public static int getFamiliarByEmail(String email) throws SQLException{
+		return Familiar.getIdFamiliarByEmail(email);
+	}
+	
+	public static int getPacienteByEmail(String email) throws SQLException{
+		return Paciente.getIdPacienteByEmail(email);
+	}
+	
 }

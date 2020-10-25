@@ -1,6 +1,8 @@
 package Controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +26,32 @@ public class RealizarCadastroPaciente extends HttpServlet {
 		nickname = request.getParameter("nickname");
 		senha = request.getParameter("senhaUsuario");
 		telefone = request.getParameter("telefoneUsuario");
+		int id = 0, id2 = 0;
 		
+		try {
+			id = Facade.getFamiliarByEmail(email);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try {
+			id2 = Facade.getPacienteByNickname(nickname);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if(id != 0 && id2 != 0){
+			request.setAttribute("erro", "email e nickname já cadastrados, tente novamente com outro email e nickname ou faça login");
+			request.getRequestDispatcher("cadastroPaciente.jsp").forward(request, response);
+		}else if(id == 0 && id2 != 0){
+			request.setAttribute("erro", "nickname já cadastrado, tente novamente com outro nickname ou faça login");
+			request.getRequestDispatcher("cadastroPaciente.jsp").forward(request, response);
+		}else if(id != 0 && id2 == 0){
+			request.setAttribute("erro", "email já cadastrado, tente novamente com outro email ou faça login");
+			request.getRequestDispatcher("cadastroPaciente.jsp").forward(request, response);
+		}
 		Facade.cadastrarPaciente(nome, email, data, nickname, senha, telefone);
 		
 		response.sendRedirect("loginPaciente.jsp");
